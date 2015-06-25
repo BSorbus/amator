@@ -1,0 +1,43 @@
+<h3><span class="glyphicon glyphicon-home" aria-hidden="true"> 
+  <%= t(' Clubs', default: t("pages.clubs.index.title")) %>  
+  </span>
+</h3>
+
+<div class="col-sm-12">
+  <% if I18n.locale == :pl %>
+  <table id="clubs" class="hover cell-border" data-source="<%= datatables_index_clubs_path(format: :json) %>">
+  <% else %>
+  <table id="clubs_en" class="hover cell-border" data-source="<%= datatables_index_clubs_path(format: :json) %>">
+  <% end %>
+    <thead>
+      <tr>
+        <th> 0 id</th>
+        <th> 1 <%= Club.human_attribute_name(:department) %></th>
+        <th> 2 Number</th>
+        <th> 3 date_of_issue</th>
+        <th> 4 Valid to</th>
+        <th> 5 Call sign</th>
+        <th> 6 Category</th>
+        <th> 7 Transmitter power</th>
+        <th> 8 Station city</th>
+      </tr>
+    </thead>
+
+    <tbody>
+       <!--data from JSON -->
+    </tbody>
+  </table>
+</div> <!--/col-sm-12 -->
+
+
+<div class="col-sm-12">
+
+  <% if user_signed_in? %>
+    <% if policy(Club).new? %>
+      <%= link_to t('New', default: t("helpers.links.new")), new_club_path, 
+                        :class => 'btn btn-primary glyphicon glyphicon-plus' %> 
+    <% end %>
+  <% end %>
+
+</div> <!--/col-sm-12 -->
+

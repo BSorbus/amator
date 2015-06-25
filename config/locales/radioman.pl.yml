@@ -1,0 +1,138 @@
+  #tłumaczenia nazw pól w _form: f.label i obsłudze błędów
+  #stosując f.label :name, a nie f.label t(col_title.region.name), po wystąpieniu błędu etykieta też w bootstrapie jest"czerwona"
+pl:
+  home: 'Radioamator'
+  content_title: "Radioamator"
+  restricted_area: "Obszar ograniczony!"
+  link_to:
+    individuals: 'Osoby'
+    clubs: 'Kluby'
+  pundit:
+    default: ' OCHRONA: Brak uprawnień! Nie można wykonać tej czynności!'
+    user_policy:
+      update?: 'You cannot edit this post!'
+      create?: 'You cannot create posts!'
+  activerecord:
+    models:
+      user: 'Użytkownik'
+      individual: 'Osoba'
+      club: 'Klub'
+    messages:
+      successfull:
+        created: 'Wpis: "%{data}" został pomyślnie utworzony.'
+        updated: 'Wpis: "%{data}" został pomyślnie zaktualizowany.'
+        destroyed: 'Wpis: "%{data}" został pomyślnie usunięty.'
+      error:
+        destroyed: 'Wystąpił błąd w czasie usuwania wpisu "%{data}".'
+    attributes:
+      user:
+        name: 'Imię i Nazwisko'
+        email: 'Email'
+        password: 'Hasło'
+        password_confirmation: 'Potwórz hasło'
+        current_password: 'Aktualne hasło'
+      individual:
+        department: 'Delegatura'
+        number: 'Numer'
+        date_of_issue: 'Data wydania'
+        valid_to: 'Ważne do'
+        call_sign: 'Znak'
+        category: 'Kategoria'
+        transmitter_power: 'Moc'
+        station_location: 'Stacja'
+      club:
+        department: 'Delegatura'
+        number: 'Numer'
+        date_of_issue: 'Data wydania'
+        valid_to: 'Ważne do'
+        call_sign: 'Znak'
+        category: 'Kategoria'
+        transmitter_power: 'Moc'
+        operator_1: 'Operator I'
+        operator_2: 'Operator II'
+        operator_3: 'Operator III'
+        enduser_name: 'Użytkownik - Nazwa'
+        enduser_city: 'Użytkownik - Miejscowość'
+        enduser_street: 'Użytkownik - Ulica'
+        enduser_house: 'Użytkownik - Dom'
+        enduser_number: 'Użytkownik - Lokal'
+        applicant_name: 'Wnioskodawca - Nazwa'
+        applicant_city: 'Wnioskodawca - Miejscowość'
+        applicant_street: 'Wnioskodawca - Ulica'
+        applicant_house: 'Wnioskodawca - Dom'
+        applicant_number: 'Wnioskodawca - Lokal'
+        station_city: 'Stacja - Miejscowość'
+        station_street: 'Stacja - Ulica'
+        station_house: 'Stacja - Dom'
+        station_number: 'Stacja - Lokal'
+  help_block_text:
+    discount:
+      form:
+        discount_increase: 'Wartość dodatnia oznacza zwyżkę, a wartość ujemna zniżkę.'
+    user:
+      show:
+        info_item: 'Posiada:'
+        info_reservation: 'Rezerwuje:'
+        info_other: 'Inne:'
+      edit_password:
+        need_current_password: 'Potwierdź zmiany wprowadzając aktualne hasło'
+  pages:
+    clubs: "Kluby"
+    club_new: " Nowy dla Klubu"
+    individuals: "Osoby"
+    individual_new: " Nowy dla Osoby"
+    visitors:
+      index:
+        title: 'Zapraszamy do rejestru on-line'
+        title_sub: 'Pozwolenia radiowe'
+        sub_individuals: 'Osoby fizyczne'
+        sub_individuals_text: 'Wykaz pozwoleń wydanych osobom fizycznym'
+        sub_clubs: 'Podmioty prawne'
+        sub_clubs_text: 'Wykaz pozwoleń wydanych podmiotom prawnym'
+        sub_mfree_individuals: 'Osoby fizyczne - urządzenia bezobsługowe'
+        sub_mfree_individuals_text: 'Wykaz pozwoleń wydanych osobom fizycznym'
+        sub_mfree_clubs: 'Podmioty prawne - urządzenia bezobsługowe'
+        sub_mfree_clubs_text: 'Wykaz pozwoleń wydanych podmiotom prawnym'
+    users:
+      index:
+        title: 'Użytkownicy'
+    individuals:
+      index:
+        title: 'Osoby'
+    clubs:
+      index:
+        title: 'Kluby'
+    footer:
+      contact: 'Kontakt:'
+      links: 'Zobacz też:'
+      links_www1_title: 'UKE'
+      links_www1: 'http://uke.gov.pl'
+      links_www2_title: 'Pozwolenia radiowe'
+      links_www2: 'http://uke.gov.pl/pozwolenia-radiowe-11784'
+      links_www3_title: 'Służba amatorska'
+      links_www3: 'http://uke.gov.pl/pozwolenie-radiowe-sluzba-amatorska-4266'
+  button_text:
+    item:
+      form:
+        button_show_as_insured: '...jako Ubezpieczony'
+        button_show_as_payer: '...jako Płatnik'
+  tooltip:
+    show: 'Pokaż'
+    edit: 'Edycja'
+    destroy: 'Usuń'
+    new_assignation: "Przypisanie"
+    destroy_assignation: "Usuń przypisanie"
+    new_reservation: "Rezerwacja"
+    destroy_reservation: "Usuń rezerwację"
+    add_to_suit: "Dodaj do zestawu"
+    remove_from_suit: "Usuń z zestawu"
+  placeholder_text:
+    company:
+      show:
+      form:
+        short: 'np. ARTEX'
+        name: 'np. Artex-Software Sp z o.o.'
+      index:
+    discount:
+      form:
+        discount_increase: '+/-   -> zwyżka lub zniżka'

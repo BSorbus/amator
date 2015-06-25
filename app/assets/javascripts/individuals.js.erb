@@ -1,0 +1,110 @@
+$(document).ready(function() {
+  var oIndividualtable = $('#individuals').DataTable({
+    responsive: true,
+    processing: true,
+    serverSide: true,
+    deferRender: true,
+    ajax: { 
+      url: $('#individuals').data('source'),
+      type: "POST"
+    },
+    //pagingType: "full_numbers",
+    lengthMenu: [[10, 15, 25, 50, 100, -1], [10, 15, 25, 50, 100, "Wszystkie"]],
+    columns: [
+      { "targets": [0],
+        "title": "ID",
+        "visible": false,
+        "searchable": false,
+        "sortable": false }, 
+      { "targets": [1],
+        //"title": I18n.t("activerecord.attributes.individual.department") }, 
+        "title": "Oddział" }, 
+      { "targets": [2],
+        //"title": "<%= Individual.human_attribute_name('individual.number') %>" }, 
+        "title": "Numer" }, 
+      { "targets": [3],
+        "title": "Wydane dania" }, 
+      { "targets": [4],
+        "title": "Ważne do" }, 
+      { "targets": [5],
+        "title": "Znak" }, 
+      { "targets": [6],
+        "title": "Kategoria" }, 
+      { "targets": [7],
+        "title": "Moc" }, 
+      { "targets": [8],
+        "title": "Stacja" }
+    ],
+    order: [[ 1, "asc" ]],
+    language: {
+      url: '<%= asset_path("pl.json.erb") %>'
+      //url: '<%= asset_path("#{I18n.locale}.json.erb") %>'
+    }
+  });
+
+  
+  $('#individuals tbody').on('click', 'tr', function () {
+    $(this).toggleClass('selected');
+    var rowData = oIndividualtable.row( this ).data()[0];
+    var newurl = window.location.protocol + '//' + window.location.host + '/individuals/' + rowData;
+    window.location.href = newurl;
+  });
+
+
+
+
+
+
+  var oIndividual_en_table = $('#individuals_en').DataTable({
+    responsive: true,
+    processing: true,
+    serverSide: true,
+    deferRender: true,
+    ajax: { 
+      url: $('#individuals_en').data('source'),
+      type: "POST"
+    },
+    //pagingType: "full_numbers",
+    lengthMenu: [[10, 15, 25, 50, 100, -1], [10, 15, 25, 50, 100, "Wszystkie"]],
+    columns: [
+      { "targets": [0],
+        "title": "ID",
+        "visible": false,
+        "searchable": false,
+        "sortable": false }, 
+      { "targets": [1],
+        "title": "Department" }, 
+      { "targets": [2],
+        "title": "Number" }, 
+      { "targets": [3],
+        "title": "Date of issue" }, 
+      { "targets": [4],
+        "title": "Valid to" }, 
+      { "targets": [5],
+        "title": "Call sign" }, 
+      { "targets": [6],
+        "title": "Class" }, 
+      { "targets": [7],
+        "title": "Power" }, 
+      { "targets": [8],
+        "title": "Station" }
+    ],
+    order: [[ 1, "asc" ]],
+    language: {
+      url: '<%= asset_path("en.json.erb") %>'
+    }
+  });
+
+  
+  $('#individuals_en tbody').on('click', 'tr', function () {
+    $(this).toggleClass('selected');
+    var rowData = oIndividual_en_table.row( this ).data()[0];
+    var newurl = window.location.protocol + '//' + window.location.host + '/individuals/' + rowData;
+    window.location.href = newurl;
+  });
+
+
+
+
+
+});

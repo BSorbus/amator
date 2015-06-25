@@ -1,0 +1,24 @@
+<%# add navigation links to this file %>
+<% if user_signed_in? %>
+  <% if current_user.admin? %>
+    <li><%= link_to users_path do %>
+    	<span class="glyphicon glyphicon-user"></span>&nbsp;<%=t "devise.link_to.users" %>
+      <% end %>
+    </li>
+  <% end %>
+  <li><%= link_to edit_user_registration_path do %>
+    <span class="glyphicon glyphicon-edit"></span>&nbsp;<%= current_user.name %>
+    <% end %>
+  </li>
+  <li><%= link_to destroy_user_session_path, :method=>'delete' do %>
+    <span class="glyphicon glyphicon-log-out"></span>&nbsp;<%=t "devise.link_to.sign_out" %>
+    <% end %>
+  </li>
+<% else %>
+  <% if request_from_the_security_area? %>
+    <li><%= link_to new_user_session_path do %>
+      <span class="glyphicon glyphicon-log-in"></span>&nbsp;<%=t "devise.link_to.sign_in" %>
+      <% end %>
+    </li>
+  <% end %>
+<% end %>

@@ -1,0 +1,199 @@
+<%= form_for [@club], :html => { :role => 'form club' } do |f| %>
+
+  <% input_disabled ||= false  
+     #if input_disabled is not passed to the partial it doesn't crash. 
+     # We default it to false 
+  %>
+
+  <% if @club.errors.any? %>
+    <div id="error_explanation" class="panel panel-danger">
+      <div class="panel-body">
+        <ul>
+        <% @club.errors.full_messages.each do |msg| %>
+          <li><h5><%= msg %></h5></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="row">
+
+        <div class="form-group col-sm-6">
+          <%= f.label :department, class: 'control-label' %>
+          <%= f.text_field :department, autofocus: true, class: 'form-control' %>
+        </div>
+
+        <div class="form-group col-sm-4">
+          <%= f.label :number, class: 'control-label' %>
+          <%= f.text_field :number, class: 'form-control', disabled: input_disabled %>
+        </div>
+
+      </div>  <!-- /row -->
+    </div>  <!-- /col-sm-12 -->
+  </div>  <!-- /row -->
+
+  <hr>
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="row">
+        <div class="form-group col-sm-3">
+          <%= f.label :date_of_issue, class: 'control-label' %>
+          <%= f.text_field :date_of_issue, class: 'datepicker form-control input-sm', disabled: input_disabled %>
+        </div>
+        <div class="form-group col-sm-3">
+          <%= f.label :valid_to, class: 'control-label' %>
+          <%= f.text_field :valid_to, class: 'datepicker form-control input-sm', disabled: input_disabled %>
+        </div>
+        <div class="form-group col-sm-2">
+          <%= f.label :call_sign, class: 'control-label' %>
+          <%= f.text_field :call_sign, class: 'form-control input-sm', disabled: input_disabled %>
+        </div>
+        <div class="form-group col-sm-2">
+          <%= f.label :category, class: 'control-label' %>
+          <%= f.text_field :category, class: 'form-control input-sm', disabled: input_disabled %>
+        </div>
+        <div class="form-group col-sm-2">
+          <%= f.label :transmitter_power, class: 'control-label' %>
+          <%= f.text_field :transmitter_power, class: 'form-control input-sm', disabled: input_disabled %>
+        </div>
+      </div>
+
+    </div> <!-- /col-sm-12 -->
+
+  </div> <!-- /row -->
+
+  <hr>
+
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <%= f.label :applicant_name, class: 'control-label' %>
+      <%= f.text_field :applicant_name, class: 'form-control input-sm', disabled: input_disabled %>
+    </div>
+  </div> <!-- /row -->
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="row">
+        <div class="form-group col-sm-4">
+          <%= f.label :applicant_city, class: 'control-label' %>
+          <%= f.text_field :applicant_city, class: 'form-control input-sm', disabled: input_disabled %>
+        </div>
+        <div class="form-group col-sm-4">
+          <%= f.label :applicant_street, class: 'control-label' %>
+          <%= f.text_field :applicant_street, class: 'form-control input-sm', disabled: input_disabled %>
+        </div>
+        <div class="form-group col-sm-2">
+          <%= f.label :applicant_house, class: 'control-label' %>
+          <%= f.text_field :applicant_house, class: 'form-control input-sm', disabled: input_disabled %>
+        </div>
+        <div class="form-group col-sm-2">
+          <%= f.label :applicant_number, class: 'control-label' %>
+          <%= f.text_field :applicant_number, class: 'form-control input-sm', disabled: input_disabled %>
+        </div>
+      </div>
+
+    </div> <!-- /col-sm-12 -->
+
+  </div> <!-- /row -->
+
+
+  <hr>
+
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <%= f.label :enduser_name, class: 'control-label' %>
+      <%= f.text_field :enduser_name, class: 'form-control input-sm', disabled: input_disabled %>
+    </div>
+  </div> <!-- /row -->
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="row">
+        <div class="form-group col-sm-4">
+          <%= f.label :enduser_city, class: 'control-label' %>
+          <%= f.text_field :enduser_city, class: 'form-control input-sm', disabled: input_disabled %>
+        </div>
+        <div class="form-group col-sm-4">
+          <%= f.label :enduser_street, class: 'control-label' %>
+          <%= f.text_field :enduser_street, class: 'form-control input-sm', disabled: input_disabled %>
+        </div>
+        <div class="form-group col-sm-2">
+          <%= f.label :enduser_house, class: 'control-label' %>
+          <%= f.text_field :enduser_house, class: 'form-control input-sm', disabled: input_disabled %>
+        </div>
+        <div class="form-group col-sm-2">
+          <%= f.label :enduser_number, class: 'control-label' %>
+          <%= f.text_field :enduser_number, class: 'form-control input-sm', disabled: input_disabled %>
+        </div>
+      </div>
+
+    </div> <!-- /col-sm-12 -->
+
+  </div> <!-- /row -->
+
+  <hr>
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="row">
+        <div class="form-group col-sm-4">
+          <%= f.label :station_city, class: 'control-label' %>
+          <%= f.text_field :station_city, class: 'form-control input-sm', disabled: input_disabled %>
+        </div>
+        <div class="form-group col-sm-4">
+          <%= f.label :station_street, class: 'control-label' %>
+          <%= f.text_field :station_street, class: 'form-control input-sm', disabled: input_disabled %>
+        </div>
+        <div class="form-group col-sm-2">
+          <%= f.label :station_house, class: 'control-label' %>
+          <%= f.text_field :station_house, class: 'form-control input-sm', disabled: input_disabled %>
+        </div>
+        <div class="form-group col-sm-2">
+          <%= f.label :station_number, class: 'control-label' %>
+          <%= f.text_field :station_number, class: 'form-control input-sm', disabled: input_disabled %>
+        </div>
+      </div>
+
+    </div> <!-- /col-sm-12 -->
+
+  </div> <!-- /row -->
+
+  <hr>
+
+
+  <% if input_disabled %>
+    <!-- for "Show" -->
+    <%= link_to t('Index', default: t("helpers.links.index")), clubs_path, :class => 'btn btn-default glyphicon glyphicon-th-list' %>
+
+    <% if user_signed_in? %>
+      <% if policy(@club).destroy? %>
+
+        <%= link_to t('Delete', default: t("helpers.links.destroy")), club_path(@club),
+                          method: :delete,
+                          data: { confirm: t('helpers.links.confirm_destroy', data: @club.fullname) },
+                          :class => "btn btn-danger glyphicon glyphicon-trash" %>
+      <% end %>
+
+      <% if policy(@club).edit? %>
+        <%= link_to t('Edit', default: t("helpers.links.edit")), edit_club_path(@club), 
+                          :class => "btn btn-primary glyphicon glyphicon-edit" %>  
+      <% end %>
+    <% end %>
+  <% else %>
+    <!-- form "New"/"Edit" -->
+    <%= link_to t('Index', default: t("helpers.links.index")), clubs_path, :class => 'btn btn-default glyphicon glyphicon-th-list' %>
+    <%= link_to t('Back', default: t("helpers.links.back")), :back, :class => 'btn btn-default' %>
+    <% if user_signed_in? %>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+    <% end %>
+  <% end %>
+  
+<% end %>

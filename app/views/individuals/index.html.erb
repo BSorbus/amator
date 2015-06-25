@@ -1,0 +1,51 @@
+<h3><span class="glyphicon glyphicon-user" aria-hidden="true"> 
+  <%= t(' Individuals', default: t("pages.individuals.index.title")) %>  
+  </span>
+</h3>
+
+<div class="col-sm-12">
+  <% if I18n.locale == :pl %>
+  <table id="individuals" class="hover cell-border" data-source="<%= datatables_index_individuals_path(format: :json) %>">
+  <% else %>
+  <table id="individuals_en" class="hover cell-border" data-source="<%= datatables_index_individuals_path(format: :json) %>">
+  <% end %>
+    <thead>
+      <tr>
+        <th> 0 id</th>
+        <th> 1 <%= Individual.human_attribute_name(:department) %></th>
+        <th> 2 Number</th>
+        <th> 3 date_of_issue</th>
+        <th> 4 Valid to</th>
+        <th> 5 Call sign</th>
+        <th> 6 Category</th>
+        <th> 7 Transmitter power</th>
+        <th> 8 Station location</th>
+      </tr>
+    </thead>
+
+    <tbody>
+       <!--data from JSON -->
+    </tbody>
+  </table>
+</div> <!--/col-sm-12 -->
+
+
+<div class="col-sm-12">
+
+  <% if user_signed_in? %>
+    <% if policy(Individual).new? %>
+      <%= link_to t('New', default: t("helpers.links.new")), new_individual_path, 
+                            :class => 'btn btn-primary glyphicon glyphicon-plus' %> 
+    <% end %>
+  <% end %>
+
+
+<!--
+  Wywołanie funkcji w JS, która nastepnie wywołuje metdode w kontrolerze 
+
+  <button id="individuals-refresh" class="btn btn-success glyphicon glyphicon-refresh"> <%= 'Refresh' %></button>
+-->
+
+
+</div> <!--/col-sm-12 -->
+

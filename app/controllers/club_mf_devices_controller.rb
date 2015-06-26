@@ -19,6 +19,7 @@ class ClubMfDevicesController < ApplicationController
       format.json{ render json: ClubMfDeviceDatatable.new(view_context) }
     end
   end
+ 
   # GET /club_mf_devices/1
   # GET /club_mf_devices/1.json
   def show

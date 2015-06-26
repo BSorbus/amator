@@ -1,4 +1,7 @@
 class IndividualMfDevicesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :datatables_index, :show]
+  after_action :verify_authorized, except: [:index, :datatables_index, :show]
+
   before_action :set_individual_mf_device, only: [:show, :edit, :update, :destroy]
 
   # GET /individual_mf_devices
@@ -25,20 +28,23 @@ class IndividualMfDevicesController < ApplicationController
   # GET /individual_mf_devices/new
   def new
     @individual_mf_device = IndividualMfDevice.new
+    authorize @individual_mf_device
   end
 
   # GET /individual_mf_devices/1/edit
   def edit
+    authorize @individual_mf_device
   end
 
   # POST /individual_mf_devices
   # POST /individual_mf_devices.json
   def create
     @individual_mf_device = IndividualMfDevice.new(individual_mf_device_params)
+    authorize @individual_mf_device
 
     respond_to do |format|
       if @individual_mf_device.save
-        format.html { redirect_to @individual_mf_device, notice: 'Individual mf device was successfully created.' }
+        format.html { redirect_to @individual_mf_device, notice: t('activerecord.messages.successfull.created', data: @individual_mf_device.fullname) }
         format.json { render :show, status: :created, location: @individual_mf_device }
       else
         format.html { render :new }
@@ -50,9 +56,11 @@ class IndividualMfDevicesController < ApplicationController
   # PATCH/PUT /individual_mf_devices/1
   # PATCH/PUT /individual_mf_devices/1.json
   def update
+    authorize @individual
+
     respond_to do |format|
       if @individual_mf_device.update(individual_mf_device_params)
-        format.html { redirect_to @individual_mf_device, notice: 'Individual mf device was successfully updated.' }
+        format.html { redirect_to @individual_mf_device, notice: t('activerecord.messages.successfull.updated', data: @individual_mf_device.fullname) }
         format.json { render :show, status: :ok, location: @individual_mf_device }
       else
         format.html { render :edit }
@@ -64,12 +72,18 @@ class IndividualMfDevicesController < ApplicationController
   # DELETE /individual_mf_devices/1
   # DELETE /individual_mf_devices/1.json
   def destroy
-    @individual_mf_device.destroy
-    respond_to do |format|
-      format.html { redirect_to individual_mf_devices_url, notice: 'Individual mf device was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    authorize @individual_mf_device
+    
+    if @individual_mf_device.destroy
+      redirect_to individuals_mf_device_url, notice: t('activerecord.messages.successfull.destroyed', data: @individual_mf_device.fullname) 
+    else 
+      flash[:error] = t('activerecord.messages.error.destroyed', data: @individual_mf_device.fullname)
+      render :show
+    end      
   end
+
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

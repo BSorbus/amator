@@ -1,0 +1,51 @@
+<h3><span class="glyphicon glyphicon-scale" aria-hidden="true"> 
+  <%= t(' Clubs', default: t("pages.club_mf_devices.index.title")) %>  
+  </span>
+</h3>
+
+<div class="col-sm-12">
+  <% if I18n.locale == :pl %>
+  <table id="club_mf_devices" class="hover cell-border" data-source="<%= datatables_index_club_mf_devices_path(format: :json) %>">
+  <% else %>
+  <table id="club_mf_devices_en" class="hover cell-border" data-source="<%= datatables_index_club_mf_devices_path(format: :json) %>">
+  <% end %>
+    <thead>
+      <tr>
+        <th> 0 id</th>
+        <th> 1 <%= ClubMfDevice.human_attribute_name(:department) %></th>
+        <th> 2 Number</th>
+        <th> 3 date_of_issue</th>
+        <th> 4 Valid to</th>
+        <th> 5 Call sign</th>
+        <th> 6 Category</th>
+        <th> 7 Transmitter power</th>
+        <th> 8 Name of station type</th>
+        <th> 9 Emission</th>
+        <th>10 Input frequency</th>
+        <th>11 Output frequency</th>
+        <th>12 Operator I</th>
+        <th>13 Operator II</th>
+        <th>14 Operator III</th>
+        <th>15 Station</th>
+        <th>16 Applicant</th>
+      </tr>
+    </thead>
+
+    <tbody>
+       <!--data from JSON -->
+    </tbody>
+  </table>
+</div> <!--/col-sm-12 -->
+
+
+<div class="col-sm-12">
+
+  <% if user_signed_in? %>
+    <% if policy(ClubMfDevice).new? %>
+      <%= link_to t('New', default: t("helpers.links.new")), new_club_mf_device_path, 
+                        :class => 'btn btn-primary glyphicon glyphicon-plus' %> 
+    <% end %>
+  <% end %>
+
+</div> <!--/col-sm-12 -->
+

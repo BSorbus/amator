@@ -1,0 +1,129 @@
+<%= form_for(@club_mf_device) do |f| %>
+  <% if @club_mf_device.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@club_mf_device.errors.count, "error") %> prohibited this club_mf_device from being saved:</h2>
+
+      <ul>
+      <% @club_mf_device.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :department %><br>
+    <%= f.text_field :department %>
+  </div>
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.text_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :date_of_issue %><br>
+    <%= f.date_select :date_of_issue %>
+  </div>
+  <div class="field">
+    <%= f.label :valid_to %><br>
+    <%= f.date_select :valid_to %>
+  </div>
+  <div class="field">
+    <%= f.label :call_sign %><br>
+    <%= f.text_field :call_sign %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :transmitter_power %><br>
+    <%= f.number_field :transmitter_power %>
+  </div>
+  <div class="field">
+    <%= f.label :name_type_station %><br>
+    <%= f.text_field :name_type_station %>
+  </div>
+  <div class="field">
+    <%= f.label :emission %><br>
+    <%= f.text_field :emission %>
+  </div>
+  <div class="field">
+    <%= f.label :input_frequency %><br>
+    <%= f.text_field :input_frequency %>
+  </div>
+  <div class="field">
+    <%= f.label :output_frequency %><br>
+    <%= f.text_field :output_frequency %>
+  </div>
+  <div class="field">
+    <%= f.label :operator_1 %><br>
+    <%= f.text_field :operator_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :operator_2 %><br>
+    <%= f.text_field :operator_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :operator_3 %><br>
+    <%= f.text_field :operator_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :enduser_name %><br>
+    <%= f.text_field :enduser_name %>
+  </div>
+  <div class="field">
+    <%= f.label :enduser_city %><br>
+    <%= f.text_field :enduser_city %>
+  </div>
+  <div class="field">
+    <%= f.label :enduser_street %><br>
+    <%= f.text_field :enduser_street %>
+  </div>
+  <div class="field">
+    <%= f.label :enduser_house %><br>
+    <%= f.text_field :enduser_house %>
+  </div>
+  <div class="field">
+    <%= f.label :enduser_number %><br>
+    <%= f.text_field :enduser_number %>
+  </div>
+  <div class="field">
+    <%= f.label :applicant_name %><br>
+    <%= f.text_field :applicant_name %>
+  </div>
+  <div class="field">
+    <%= f.label :applicant_city %><br>
+    <%= f.text_field :applicant_city %>
+  </div>
+  <div class="field">
+    <%= f.label :applicant_street %><br>
+    <%= f.text_field :applicant_street %>
+  </div>
+  <div class="field">
+    <%= f.label :applicant_house %><br>
+    <%= f.text_field :applicant_house %>
+  </div>
+  <div class="field">
+    <%= f.label :applicant_number %><br>
+    <%= f.text_field :applicant_number %>
+  </div>
+  <div class="field">
+    <%= f.label :station_city %><br>
+    <%= f.text_field :station_city %>
+  </div>
+  <div class="field">
+    <%= f.label :station_street %><br>
+    <%= f.text_field :station_street %>
+  </div>
+  <div class="field">
+    <%= f.label :station_house %><br>
+    <%= f.text_field :station_house %>
+  </div>
+  <div class="field">
+    <%= f.label :station_number %><br>
+    <%= f.text_field :station_number %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

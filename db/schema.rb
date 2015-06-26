@@ -11,10 +11,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622190012) do
+ActiveRecord::Schema.define(version: 20150626092504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "club_mf_devices", force: :cascade do |t|
+    t.string   "department"
+    t.string   "number"
+    t.date     "date_of_issue"
+    t.date     "valid_to"
+    t.string   "call_sign"
+    t.string   "category"
+    t.integer  "transmitter_power"
+    t.string   "name_type_station"
+    t.string   "emission"
+    t.string   "input_frequency"
+    t.string   "output_frequency"
+    t.string   "operator_1"
+    t.string   "operator_2"
+    t.string   "operator_3"
+    t.string   "enduser_name"
+    t.string   "enduser_city"
+    t.string   "enduser_street"
+    t.string   "enduser_house"
+    t.string   "enduser_number"
+    t.string   "applicant_name"
+    t.string   "applicant_city"
+    t.string   "applicant_street"
+    t.string   "applicant_house"
+    t.string   "applicant_number"
+    t.string   "station_city"
+    t.string   "station_street"
+    t.string   "station_house"
+    t.string   "station_number"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "club_mf_devices", ["applicant_name"], name: "index_club_mf_devices_on_applicant_name", using: :btree
+  add_index "club_mf_devices", ["call_sign"], name: "index_club_mf_devices_on_call_sign", using: :btree
+  add_index "club_mf_devices", ["department"], name: "index_club_mf_devices_on_department", using: :btree
+  add_index "club_mf_devices", ["enduser_name"], name: "index_club_mf_devices_on_enduser_name", using: :btree
+  add_index "club_mf_devices", ["name_type_station"], name: "index_club_mf_devices_on_name_type_station", using: :btree
+  add_index "club_mf_devices", ["number"], name: "index_club_mf_devices_on_number", using: :btree
+  add_index "club_mf_devices", ["operator_1"], name: "index_club_mf_devices_on_operator_1", using: :btree
+  add_index "club_mf_devices", ["operator_2"], name: "index_club_mf_devices_on_operator_2", using: :btree
+  add_index "club_mf_devices", ["operator_3"], name: "index_club_mf_devices_on_operator_3", using: :btree
+  add_index "club_mf_devices", ["station_city"], name: "index_club_mf_devices_on_station_city", using: :btree
 
   create_table "clubs", force: :cascade do |t|
     t.string   "department"
@@ -45,16 +89,44 @@ ActiveRecord::Schema.define(version: 20150622190012) do
     t.datetime "updated_at",        null: false
   end
 
-  add_index "clubs", ["applicant_city"], name: "index_clubs_on_applicant_city", using: :btree
   add_index "clubs", ["applicant_name"], name: "index_clubs_on_applicant_name", using: :btree
   add_index "clubs", ["call_sign"], name: "index_clubs_on_call_sign", using: :btree
-  add_index "clubs", ["enduser_city"], name: "index_clubs_on_enduser_city", using: :btree
+  add_index "clubs", ["department"], name: "index_clubs_on_department", using: :btree
   add_index "clubs", ["enduser_name"], name: "index_clubs_on_enduser_name", using: :btree
   add_index "clubs", ["number"], name: "index_clubs_on_number", using: :btree
   add_index "clubs", ["operator_1"], name: "index_clubs_on_operator_1", using: :btree
   add_index "clubs", ["operator_2"], name: "index_clubs_on_operator_2", using: :btree
   add_index "clubs", ["operator_3"], name: "index_clubs_on_operator_3", using: :btree
   add_index "clubs", ["station_city"], name: "index_clubs_on_station_city", using: :btree
+
+  create_table "individual_mf_devices", force: :cascade do |t|
+    t.string   "department"
+    t.string   "number"
+    t.date     "date_of_issue"
+    t.date     "valid_to"
+    t.string   "call_sign"
+    t.string   "category"
+    t.integer  "transmitter_power"
+    t.string   "name_type_station"
+    t.string   "emission"
+    t.string   "input_frequency"
+    t.string   "output_frequency"
+    t.string   "operator_1"
+    t.string   "operator_2"
+    t.string   "operator_3"
+    t.string   "station_location"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "individual_mf_devices", ["call_sign"], name: "index_individual_mf_devices_on_call_sign", using: :btree
+  add_index "individual_mf_devices", ["department"], name: "index_individual_mf_devices_on_department", using: :btree
+  add_index "individual_mf_devices", ["name_type_station"], name: "index_individual_mf_devices_on_name_type_station", using: :btree
+  add_index "individual_mf_devices", ["number"], name: "index_individual_mf_devices_on_number", using: :btree
+  add_index "individual_mf_devices", ["operator_1"], name: "index_individual_mf_devices_on_operator_1", using: :btree
+  add_index "individual_mf_devices", ["operator_2"], name: "index_individual_mf_devices_on_operator_2", using: :btree
+  add_index "individual_mf_devices", ["operator_3"], name: "index_individual_mf_devices_on_operator_3", using: :btree
+  add_index "individual_mf_devices", ["station_location"], name: "index_individual_mf_devices_on_station_location", using: :btree
 
   create_table "individuals", force: :cascade do |t|
     t.string   "department"
@@ -70,6 +142,7 @@ ActiveRecord::Schema.define(version: 20150622190012) do
   end
 
   add_index "individuals", ["call_sign"], name: "index_individuals_on_call_sign", using: :btree
+  add_index "individuals", ["department"], name: "index_individuals_on_department", using: :btree
   add_index "individuals", ["number"], name: "index_individuals_on_number", using: :btree
   add_index "individuals", ["station_location"], name: "index_individuals_on_station_location", using: :btree
 

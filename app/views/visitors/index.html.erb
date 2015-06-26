@@ -10,13 +10,6 @@
 </div>
 
 
-<p>remote_ip: <%= request.remote_ip %></p>
-<p>request.host: <%= request.host %></p>
-<p>request.domain: <%= request.domain(2) %></p>
-<p>request.request_parameters: <%= request.request_parameters %></p>
-<p>request.query_parameters: <%= request.query_parameters %></p>
-<p>request.path_parameters: <%= request.path_parameters %></p>
-
 <div class="row">
   <div class="col-md-3">
     <div class="thumbnail">
@@ -51,7 +44,11 @@
       <div class="caption">
         <h4><%= t('pages.visitors.index.sub_mfree_individuals') %></h4>
         <p><%= t('pages.visitors.index.sub_mfree_individuals_text') %></p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
+
+        <%= link_to clubs_path do %>
+          <span class="btn btn-primary glyphicon glyphicon-home"> <%=t "link_to.individual_mf_devices" %></span>
+        <% end %>
+
       </div>
     </div>
   </div>
@@ -61,7 +58,11 @@
       <div class="caption">
         <h4><%= t('pages.visitors.index.sub_mfree_clubs') %></h4>
         <p><%= t('pages.visitors.index.sub_mfree_clubs_text') %></p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> </p>
+
+        <%= link_to clubs_path do %>
+          <span class="btn btn-primary glyphicon glyphicon-home"> <%=t "link_to.club_mf_devices" %></span>
+        <% end %>
+
       </div>
     </div>
   </div>

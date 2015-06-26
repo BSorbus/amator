@@ -1,7 +1,7 @@
 class CreateIndividuals < ActiveRecord::Migration
   def change
     create_table :individuals do |t|
-      t.string :department
+      t.string :department, index: true
       t.string :number, index: true
       t.date :date_of_issue
       t.date :valid_to

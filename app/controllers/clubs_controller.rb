@@ -12,7 +12,7 @@ class ClubsController < ApplicationController
     end   
   end
 
-  # POST /individuals
+  # POST /clubs
   def datatables_index
     #data_scope = current_user.admin? ? -1 : current_user.id
     respond_to do |format|

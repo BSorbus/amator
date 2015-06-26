@@ -2,9 +2,52 @@ en:
   home: 'Radio amateurs'
   content_title: "Radio amateurs"
   restricted_area: "Restricted area!"
+  pages: 
+    visitors:
+      index:
+        title: 'Welcome to the online registry'
+        title_sub: 'the Amateur Radio Authorizations'
+        sub_individuals: 'Natural persons'
+        sub_individuals_text: 'A list of authorizations issued for natural persons'
+        sub_clubs: 'Legal entity'
+        sub_clubs_text: 'A list of authorizations issued for legal entity'
+        sub_mfree_individuals: 'Maintenance-free devices for natural persons'
+        sub_mfree_individuals_text: 'A list of authorizations issued for natural persons'
+        sub_mfree_clubs: 'Maintenance-free devices for legal entity'
+        sub_mfree_clubs_text: 'A list of authorizations issued for legal entity'
+    users:
+      index:
+        title: 'Users'
+    individuals:
+      index:
+        title: 'Individuals'
+      new: " New for Individuals"
+    clubs:
+      index:
+        title: 'Clubs'
+      new: " New for Clubs"
+    individual_mf_devices:
+      index:
+        title: 'Maintenance-free devices for natural persons'
+      new: " New"
+    club_mf_devices:
+      index:
+        title: 'Maintenance-free devices for legal entity'
+      new: " New"
+    footer:
+      contact: 'Contact:'
+      links: 'Links:'
+      links_www1_title: 'UKE'
+      links_www1: 'http://en.uke.gov.pl'
+      links_www2_title: 'Radio licence'
+      links_www2: 'http://www.en.uke.gov.pl/radio-licence-19'
+      links_www3_title: 'Amateur Radio Authorization'
+      links_www3: 'http://www.en.uke.gov.pl/amateur-radio-authorization-for-the-foreign-citizens-121'
   link_to:
     individuals: 'Individuals'
     clubs: 'Clubs'
+    individual_mf_devices: 'M-free for Individuals'
+    club_mf_devices: 'M-free for Clubs'
   pundit:
     default: ' SECURITY: Access denied!'
     user_policy:
@@ -15,6 +58,8 @@ en:
       user: 'User'
       individual: 'Individual'
       club: 'Club'
+      individual_mf_device: 'Maintenance-free devices for natural persons'
+      club_mf_device: 'Maintenance-free devices for legal entity'
     messages:
       successfull:
         created: '"%{data}" was successfully created.'
@@ -63,73 +108,55 @@ en:
         station_street: 'Station - Street'
         station_house: 'Station - House'
         station_number: 'Station - Number'
-  help_block_text:
-    region:
-      show:
-      form:
-        short: 'Unique short name, displayed in the tables, references, links'
-        img_carousel: 'The image displayed on the home page. Best when it is the 1500x600 pixels'
-        comment_carousel: 'Text displayed on the home page'
-        img_index: 'The image displayed on the table. Best when it is the 240x160 pixels'
-        activity: 'Check if you want to be visible for all users'
-      index:
-    element:
-      form:
-        img_index: 'The image displayed on the table. Best when it is the 240x160 pixels'
-        activity: 'Check if you want to be visible for all users'
-    item:
-      form:
-        number: 'Best numbered by the grouped in the regions and elements. (example: KU-012-015 -> Kujawy, Element-012, Item-015)'
-        description: 'Precise information about this item (what it is, and the size, length, color, ....)'
-        note: 'Annotations such as "in the repair to ...." or "faulty buckle"'
-        img_index: 'Image/picture of the subject (not required)'
-        activity: 'Check if you want to be visible for all users'
-    user:
-      show:
-        info_item: 'Items:'
-        info_reservation: 'Reservations:'
-        info_other: 'Other:'
-      edit_password:
-        need_current_password: 'We need your current password to confirm your changes'
-  pages:
-    clubs: "Clubs"
-    club_new: " New for Clubs"
-    individuals: "Individuals"
-    individual_new: " New for Individuals"
-    visitors:
-      index:
-        title: 'Welcome to the online registry'
-        title_sub: 'the Amateur Radio Authorizations'
-        sub_individuals: 'Natural persons'
-        sub_individuals_text: 'A list of authorizations issued for natural persons'
-        sub_clubs: 'Legal entity'
-        sub_clubs_text: 'A list of authorizations issued for legal entity'
-        sub_mfree_individuals: 'Natural persons - Maintenance free'
-        sub_mfree_individuals_text: 'A list of authorizations issued for natural persons'
-        sub_mfree_clubs: 'Legal entity - Maintenance free'
-        sub_mfree_clubs_text: 'A list of authorizations issued for legal entity'
-    users:
-      index:
-        title: 'Users'
-    individuals:
-      index:
-        title: 'Individuals'
-    clubs:
-      index:
-        title: 'Clubs'
-    footer:
-      contact: 'Contact:'
-      links: 'Links:'
-      links_www1_title: 'UKE'
-      links_www1: 'http://en.uke.gov.pl'
-      links_www2_title: 'Radio licence'
-      links_www2: 'http://www.en.uke.gov.pl/radio-licence-19'
-      links_www3_title: 'Amateur Radio Authorization'
-      links_www3: 'http://www.en.uke.gov.pl/amateur-radio-authorization-for-the-foreign-citizens-121'
-  button_text:
-    item:
-      form:
-        button_special_edit: 'Edit additional parameters'
+      individual_mf_device:
+        department: 'Department'
+        number: 'Number'
+        date_of_issue: 'Date of issue'
+        valid_to: 'Valid to'
+        call_sign: 'Call sign'
+        category: 'Class'
+        transmitter_power: 'Power'
+        name_type_station: 'Name type station'
+        emission: 'Emission'
+        input_frequency: 'Input frequency'
+        output_frequency: 'Output frequency'
+        operator_1: 'Operator I'
+        operator_2: 'Operator II'
+        operator_3: 'Operator III'
+        station_location: 'Station location'
+      club_mf_device:
+        department: 'Department'
+        number: 'Number'
+        date_of_issue: 'Date of issue'
+        valid_to: 'Valid to'
+        call_sign: 'Call sign'
+        category: 'Category'
+        transmitter_power: 'Power'
+        name_type_station: 'Name type station'
+        emission: 'Emission'
+        input_frequency: 'Input frequency'
+        output_frequency: 'Output frequency'
+        operator_1: 'Operator I'
+        operator_2: 'Operator II'
+        operator_3: 'Operator III'
+        enduser_name: 'Enduser - Name'
+        enduser_city: 'Enduser - City'
+        enduser_street: 'Enduser - Street'
+        enduser_house: 'Enduser - House'
+        enduser_number: 'Enduser - Number'
+        applicant_name: 'Applicant - Name'
+        applicant_city: 'Applicant - City'
+        applicant_street: 'Applicant - Street'
+        applicant_house: 'Applicant - House'
+        applicant_number: 'Applicant - Number'
+        station_city: 'Station - City'
+        station_street: 'Station - Street'
+        station_house: 'Station - House'
+        station_number: 'Station - Number'
+  tooltip:
+    show: 'Pokaż'
+    edit: 'Edycja'
+    destroy: 'Usuń'
   placeholder_text:
     company:
       show:
@@ -137,14 +164,6 @@ en:
         short: 'eg.: ARTEX'
         name: 'eg.: Artex-Software Sp z o.o.'
       index:
-    element:
-      form:
-        name: 'np. KU - Buty damskie'
-        description: 'np. Skórzane trzewiki, sznurowane do pół łydki'
-    item:
-      form:
-        number: 'np. KU-012-015'
-        description: 'np. KU Buty damskie, rozmiar 38'
   flash:
     actions:
       create:

@@ -18,7 +18,11 @@ class ClubDatatable < AjaxDatatablesRails::Base
                               Club.call_sign 
                               Club.category 
                               Club.transmitter_power 
+                              Club.operator_1 
+                              Club.operator_2 
+                              Club.operator_3 
                               Club.station_city 
+                              Club.applicant_name 
                           )
   end
 
@@ -33,7 +37,11 @@ class ClubDatatable < AjaxDatatablesRails::Base
                               Club.call_sign 
                               Club.category 
                               Club.transmitter_power 
+                              Club.operator_1 
+                              Club.operator_2 
+                              Club.operator_3 
                               Club.station_city 
+                              Club.applicant_name 
                             )
   end
 
@@ -50,7 +58,11 @@ class ClubDatatable < AjaxDatatablesRails::Base
         record.call_sign,
         record.category,
         record.transmitter_power,       
-        record.station_city 
+        record.operator_1, 
+        record.operator_2, 
+        record.operator_3, 
+        record.station_city, 
+        record.applicant_name 
       ]
     end
   end

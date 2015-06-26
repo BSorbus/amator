@@ -1,0 +1,2 @@
+module IndividualMfDevicesHelper
+end

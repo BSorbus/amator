@@ -4,12 +4,13 @@ $(document).ready(function() {
     processing: true,
     serverSide: true,
     deferRender: true,
+    scrollX: true,
     ajax: { 
       url: $('#clubs').data('source'),
       type: "POST"
     },
     pagingType: "full_numbers",
-    lengthMenu: [[10, 15, 25, 50, 100, -1], [10, 15, 25, 50, 100, "Wszystkie"]],
+    lengthMenu: [[5, 10, 15, 25, 50, 100, -1], [5, 10, 15, 25, 50, 100, "Wszystkie"]],
     columns: [
       { "targets": [0],
         "title": "ID",
@@ -33,7 +34,15 @@ $(document).ready(function() {
       { "targets": [7],
         "title": "Moc" }, 
       { "targets": [8],
-        "title": "Stacja" }
+        "title": "Operator I" },
+      { "targets": [9],
+        "title": "Operator II" },
+      { "targets": [10],
+        "title": "Operator III" },
+      { "targets": [11],
+        "title": "Stacja" },
+      { "targets": [12],
+        "title": "Wnioskodawca" }
     ],
     order: [[ 1, "asc" ]],
     language: {
@@ -45,7 +54,7 @@ $(document).ready(function() {
   $('#clubs tbody').on('click', 'tr', function () {
     $(this).toggleClass('selected');
     var rowData = oClubtable.row( this ).data()[0];
-    var newurl = window.location.protocol + '//' + window.location.host + '/clubs/' + rowData;
+    var newurl = window.location.protocol + '//' + window.location.host + '/clubs/' + rowData + '?locale=pl';
     window.location.href = newurl;
   });
 
@@ -59,12 +68,13 @@ $(document).ready(function() {
     processing: true,
     serverSide: true,
     deferRender: true,
+    scrollX: true,
     ajax: { 
       url: $('#clubs_en').data('source'),
       type: "POST"
     },
     pagingType: "full_numbers",
-    lengthMenu: [[10, 15, 25, 50, 100, -1], [10, 15, 25, 50, 100, "Wszystkie"]],
+    lengthMenu: [[5, 10, 15, 25, 50, 100, -1], [5, 10, 15, 25, 50, 100, "Wszystkie"]],
     columns: [
       { "targets": [0],
         "title": "ID",
@@ -86,7 +96,15 @@ $(document).ready(function() {
       { "targets": [7],
         "title": "Power" }, 
       { "targets": [8],
-        "title": "Station - City" }
+        "title": "Operator I" },
+      { "targets": [9],
+        "title": "Operator II" },
+      { "targets": [10],
+        "title": "Operator III" },
+      { "targets": [11],
+        "title": "Station" },
+      { "targets": [12],
+        "title": "Applicant" }
     ],
     order: [[ 1, "asc" ]],
     language: {
@@ -98,7 +116,7 @@ $(document).ready(function() {
   $('#clubs_en tbody').on('click', 'tr', function () {
     $(this).toggleClass('selected');
     var rowData = oClub_en_table.row( this ).data()[0];
-    var newurl = window.location.protocol + '//' + window.location.host + '/clubs/' + rowData;
+    var newurl = window.location.protocol + '//' + window.location.host + '/clubs/' + rowData + '?locale=en';
     window.location.href = newurl;
   });
 

@@ -1,0 +1,2 @@
+module ClubMfDevicesHelper
+end

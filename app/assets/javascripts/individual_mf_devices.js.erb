@@ -1,12 +1,12 @@
 $(document).ready(function() {
-  var oIndividualtable = $('#individuals').DataTable({
+  var oIndividualMfDevicetable = $('#individual_mf_devices').DataTable({
     responsive: true,
     processing: true,
     serverSide: true,
     deferRender: true,
     scrollX: true,
     ajax: { 
-      url: $('#individuals').data('source'),
+      url: $('#individual_mf_devices').data('source'),
       type: "POST"
     },
     pagingType: "full_numbers",
@@ -18,10 +18,8 @@ $(document).ready(function() {
         "searchable": false,
         "sortable": false }, 
       { "targets": [1],
-        //"title": I18n.t("activerecord.attributes.individual.department") }, 
         "title": "Oddział" }, 
       { "targets": [2],
-        //"title": "<%= Individual.human_attribute_name('individual.number') %>" }, 
         "title": "Numer" }, 
       { "targets": [3],
         "title": "Wydane dania" }, 
@@ -34,20 +32,33 @@ $(document).ready(function() {
       { "targets": [7],
         "title": "Moc" }, 
       { "targets": [8],
+        "title": "Nazwa typu stacji" },
+      { "targets": [9],
+        "title": "Emisja" },
+      { "targets": [10],
+        "title": "Częstotliwość wej." },
+      { "targets": [11],
+        "title": "Częstotliwość wyj." },
+      { "targets": [12],
+        "title": "Operator I" },
+      { "targets": [13],
+        "title": "Operator II" },
+      { "targets": [14],
+        "title": "Operator III" },
+      { "targets": [15],
         "title": "Stacja" }
     ],
     order: [[ 1, "asc" ]],
     language: {
       url: '<%= asset_path("pl.json.erb") %>'
-      //url: '<%= asset_path("#{I18n.locale}.json.erb") %>'
     }
   });
 
   
-  $('#individuals tbody').on('click', 'tr', function () {
+  $('#individual_mf_devices tbody').on('click', 'tr', function () {
     $(this).toggleClass('selected');
-    var rowData = oIndividualtable.row( this ).data()[0];
-    var newurl = window.location.protocol + '//' + window.location.host + '/individuals/' + rowData + '?locale=pl';
+    var rowData = oIndividualMfDevicetable.row( this ).data()[0];
+    var newurl = window.location.protocol + '//' + window.location.host + '/individual_mf_devices/' + rowData + '?locale=pl';
     window.location.href = newurl;
   });
 
@@ -56,14 +67,14 @@ $(document).ready(function() {
 
 
 
-  var oIndividual_en_table = $('#individuals_en').DataTable({
+  var oIndividualMfDevice_en_table = $('#individual_mf_devices_en').DataTable({
     responsive: true,
     processing: true,
     serverSide: true,
     deferRender: true,
     scrollX: true,
     ajax: { 
-      url: $('#individuals_en').data('source'),
+      url: $('#individual_mf_devices_en').data('source'),
       type: "POST"
     },
     pagingType: "full_numbers",
@@ -89,6 +100,20 @@ $(document).ready(function() {
       { "targets": [7],
         "title": "Power" }, 
       { "targets": [8],
+        "title": "Name of station type" },
+      { "targets": [9],
+        "title": "Emission" },
+      { "targets": [10],
+        "title": "Input frequency" },
+      { "targets": [11],
+        "title": "Output frequency" },
+      { "targets": [12],
+        "title": "Operator I" },
+      { "targets": [13],
+        "title": "Operator II" },
+      { "targets": [14],
+        "title": "Operator III" },
+      { "targets": [15],
         "title": "Station" }
     ],
     order: [[ 1, "asc" ]],
@@ -98,15 +123,11 @@ $(document).ready(function() {
   });
 
   
-  $('#individuals_en tbody').on('click', 'tr', function () {
+  $('#individual_mf_devices_en tbody').on('click', 'tr', function () {
     $(this).toggleClass('selected');
-    var rowData = oIndividual_en_table.row( this ).data()[0];
-    var newurl = window.location.protocol + '//' + window.location.host + '/individuals/' + rowData  + '?locale=en';
+    var rowData = oIndividualMfDevice_en_table.row( this ).data()[0];
+    var newurl = window.location.protocol + '//' + window.location.host + '/individual_mf_devices/' + rowData + '?locale=en';
     window.location.href = newurl;
   });
-
-
-
-
 
 });

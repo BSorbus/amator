@@ -1,6 +1,6 @@
-class CreateClubs < ActiveRecord::Migration
+class CreateClubMfDevices < ActiveRecord::Migration
   def change
-    create_table :clubs do |t|
+    create_table :club_mf_devices do |t|
       t.string :department, index: true
       t.string :number, index: true
       t.date :date_of_issue
@@ -8,6 +8,10 @@ class CreateClubs < ActiveRecord::Migration
       t.string :call_sign, index: true
       t.string :category
       t.integer :transmitter_power
+      t.string :name_type_station, index: true
+      t.string :emission
+      t.string :input_frequency
+      t.string :output_frequency
       t.string :operator_1, index: true
       t.string :operator_2, index: true
       t.string :operator_3, index: true

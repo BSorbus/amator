@@ -40,6 +40,9 @@
 
 <div class="col-sm-12">
 
+  <%= link_to t('download', default: t("helpers.links.download")), export_club_mf_devices_path( :format => "csv" ), 
+                            :class => 'btn btn-primary glyphicon glyphicon-download' %>
+
   <% if user_signed_in? %>
     <% if policy(ClubMfDevice).new? %>
       <%= link_to t('New', default: t("helpers.links.new")), new_club_mf_device_path, 

@@ -9,7 +9,7 @@ class IndividualsController < ApplicationController
     @data = Individual.all
   
     respond_to do |format|
-      format.csv { send_data @data.to_csv, filename: "ra_individuals_#{Time.zone.today.strftime("%Y-%m-%d")}.csv" }
+      format.csv { send_data @data.to_csv, filename: "individuals_#{Time.zone.today.strftime("%Y-%m-%d")}.csv" }
       #format.csv { send_data @individuals.to_csv, filename: "ra_individuals_#{Time.zone.new().strftime("%Y-%m-%d")}.csv" }
     end
   end

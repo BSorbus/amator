@@ -39,6 +39,9 @@
 
 <div class="col-sm-12">
 
+  <%= link_to t('download', default: t("helpers.links.download")), export_individual_mf_devices_path( :format => "csv" ), 
+                            :class => 'btn btn-primary glyphicon glyphicon-download' %>
+
   <% if user_signed_in? %>
     <% if policy(IndividualMfDevice).new? %>
       <%= link_to t('New', default: t("helpers.links.new")), new_individual_mf_device_path, 

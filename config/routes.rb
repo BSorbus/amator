@@ -13,14 +13,17 @@ Rails.application.routes.draw do
 
 	  resources :clubs do
 	    post 'datatables_index', on: :collection
+  		get 'export', on: :collection
 	  end
 
 	  resources :individual_mf_devices do
 	    post 'datatables_index', on: :collection
+  		get 'export', on: :collection
 	  end
 
 	  resources :club_mf_devices do
 	    post 'datatables_index', on: :collection
+  		get 'export', on: :collection
 	  end
 
 

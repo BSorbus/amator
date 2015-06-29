@@ -1,14 +1,25 @@
 class IndividualsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :datatables_index, :show]
-  after_action :verify_authorized, except: [:index, :datatables_index, :show]
+  before_action :authenticate_user!, except: [:export, :index, :datatables_index, :show]
+  after_action :verify_authorized, except: [:export, :index, :datatables_index, :show]
 
   before_action :set_individual, only: [:show, :edit, :update, :destroy]
+
+
+  def export
+    @data = Individual.all
+  
+    respond_to do |format|
+      format.csv { send_data @data.to_csv, filename: "ra_individuals_#{Time.zone.today.strftime("%Y-%m-%d")}.csv" }
+      #format.csv { send_data @individuals.to_csv, filename: "ra_individuals_#{Time.zone.new().strftime("%Y-%m-%d")}.csv" }
+    end
+  end
 
   # GET /individuals
   # GET /individuals.json
   def index
     respond_to do |format|
       format.html
+      #format.json
     end   
   end
 

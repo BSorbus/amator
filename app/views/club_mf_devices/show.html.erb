@@ -1,144 +1,20 @@
-<p id="notice"><%= notice %></p>
+<br>
+<!-- Dane -->
+<div class="row">
+  <div class="col-sm-12">
+    <div class="panel panel-club-mf-device">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <span class="glyphicon glyphicon-scale">  <%= @club_mf_device.fullname %></span>    
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="col-sm-11 col-sm-offset-1">
 
-<p>
-  <strong>Department:</strong>
-  <%= @club_mf_device.department %>
-</p>
+          <%= render 'form_show', input_disabled: true %>
 
-<p>
-  <strong>Number:</strong>
-  <%= @club_mf_device.number %>
-</p>
-
-<p>
-  <strong>Date of issue:</strong>
-  <%= @club_mf_device.date_of_issue %>
-</p>
-
-<p>
-  <strong>Valid to:</strong>
-  <%= @club_mf_device.valid_to %>
-</p>
-
-<p>
-  <strong>Call sign:</strong>
-  <%= @club_mf_device.call_sign %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @club_mf_device.category %>
-</p>
-
-<p>
-  <strong>Transmitter power:</strong>
-  <%= @club_mf_device.transmitter_power %>
-</p>
-
-<p>
-  <strong>Name type station:</strong>
-  <%= @club_mf_device.name_type_station %>
-</p>
-
-<p>
-  <strong>Emission:</strong>
-  <%= @club_mf_device.emission %>
-</p>
-
-<p>
-  <strong>Input frequency:</strong>
-  <%= @club_mf_device.input_frequency %>
-</p>
-
-<p>
-  <strong>Output frequency:</strong>
-  <%= @club_mf_device.output_frequency %>
-</p>
-
-<p>
-  <strong>Operator 1:</strong>
-  <%= @club_mf_device.operator_1 %>
-</p>
-
-<p>
-  <strong>Operator 2:</strong>
-  <%= @club_mf_device.operator_2 %>
-</p>
-
-<p>
-  <strong>Operator 3:</strong>
-  <%= @club_mf_device.operator_3 %>
-</p>
-
-<p>
-  <strong>Enduser name:</strong>
-  <%= @club_mf_device.enduser_name %>
-</p>
-
-<p>
-  <strong>Enduser city:</strong>
-  <%= @club_mf_device.enduser_city %>
-</p>
-
-<p>
-  <strong>Enduser street:</strong>
-  <%= @club_mf_device.enduser_street %>
-</p>
-
-<p>
-  <strong>Enduser house:</strong>
-  <%= @club_mf_device.enduser_house %>
-</p>
-
-<p>
-  <strong>Enduser number:</strong>
-  <%= @club_mf_device.enduser_number %>
-</p>
-
-<p>
-  <strong>Applicant name:</strong>
-  <%= @club_mf_device.applicant_name %>
-</p>
-
-<p>
-  <strong>Applicant city:</strong>
-  <%= @club_mf_device.applicant_city %>
-</p>
-
-<p>
-  <strong>Applicant street:</strong>
-  <%= @club_mf_device.applicant_street %>
-</p>
-
-<p>
-  <strong>Applicant house:</strong>
-  <%= @club_mf_device.applicant_house %>
-</p>
-
-<p>
-  <strong>Applicant number:</strong>
-  <%= @club_mf_device.applicant_number %>
-</p>
-
-<p>
-  <strong>Station city:</strong>
-  <%= @club_mf_device.station_city %>
-</p>
-
-<p>
-  <strong>Station street:</strong>
-  <%= @club_mf_device.station_street %>
-</p>
-
-<p>
-  <strong>Station house:</strong>
-  <%= @club_mf_device.station_house %>
-</p>
-
-<p>
-  <strong>Station number:</strong>
-  <%= @club_mf_device.station_number %>
-</p>
-
-<%= link_to 'Edit', edit_club_mf_device_path(@club_mf_device) %> |
-<%= link_to 'Back', club_mf_devices_path %>
+        </div> <!--/col-sm-11 col-sm-offset-1-->    
+      </div>
+    </div> <!-- /panel -->
+  </div> <!-- /col-sm-12-->
+</div> <!-- /row -->

@@ -23,12 +23,12 @@
 
         <div class="form-group col-sm-6">
           <%= f.label :department, class: 'control-label' %>
-          <%= f.text_field :department, autofocus: true, class: 'form-control' %>
+          <h5><%= @individual_mf_device.department %></h5>
         </div>
 
         <div class="form-group col-sm-4">
           <%= f.label :number, class: 'control-label' %>
-          <%= f.text_field :number, class: 'form-control', disabled: input_disabled %>
+          <h5><%= @individual_mf_device.number %></h5>
         </div>
 
       </div>  <!-- /row -->
@@ -43,28 +43,27 @@
       <div class="row">
         <div class="form-group col-sm-3">
           <%= f.label :date_of_issue, class: 'control-label' %>
-          <%= f.text_field :date_of_issue, class: 'datepicker form-control input-sm', disabled: input_disabled %>
+          <h5><%= @individual_mf_device.date_of_issue %></h5>
         </div>
         <div class="form-group col-sm-3">
           <%= f.label :valid_to, class: 'control-label' %>
-          <%= f.text_field :valid_to, class: 'datepicker form-control input-sm', disabled: input_disabled %>
+          <h5><%= @individual_mf_device.valid_to %></h5>
         </div>
         <div class="form-group col-sm-2">
           <%= f.label :call_sign, class: 'control-label' %>
-          <%= f.text_field :call_sign, class: 'form-control input-sm', disabled: input_disabled %>
+          <h5><%= @individual_mf_device.call_sign %></h5>
         </div>
         <div class="form-group col-sm-2">
           <%= f.label :category, class: 'control-label' %>
-          <%= f.text_field :category, class: 'form-control input-sm', disabled: input_disabled %>
+          <h5><%= @individual_mf_device.category %></h5>
         </div>
         <div class="form-group col-sm-2">
           <%= f.label :transmitter_power, class: 'control-label' %>
-          <%= f.text_field :transmitter_power, class: 'form-control input-sm', disabled: input_disabled %>
+          <h5><%= @individual_mf_device.transmitter_power %></h5>
         </div>
       </div>
 
     </div> <!-- /col-sm-12 -->
-
   </div> <!-- /row -->
 
 
@@ -74,24 +73,23 @@
       <div class="row">
         <div class="form-group col-sm-3">
           <%= f.label :name_type_station, class: 'control-label' %>
-          <%= f.text_field :name_type_station, class: 'form-control input-sm', disabled: input_disabled %>
+          <h5><%= @individual_mf_device.name_type_station %></h5>
         </div>
         <div class="form-group col-sm-3">
           <%= f.label :emission, class: 'control-label' %>
-          <%= f.text_field :emission, class: 'form-control input-sm', disabled: input_disabled %>
+          <h5><%= @individual_mf_device.emission %></h5>
         </div>
         <div class="form-group col-sm-3">
           <%= f.label :input_frequency, class: 'control-label' %>
-          <%= f.text_field :input_frequency, class: 'form-control input-sm', disabled: input_disabled %>
+          <h5><%= @individual_mf_device.input_frequency %></h5>
         </div>
         <div class="form-group col-sm-3">
           <%= f.label :output_frequency, class: 'control-label' %>
-          <%= f.text_field :output_frequency, class: 'form-control input-sm', disabled: input_disabled %>
+          <h5><%= @individual_mf_device.output_frequency %></h5>
         </div>
       </div>
 
     </div> <!-- /col-sm-12 -->
-
   </div> <!-- /row -->
 
 
@@ -101,20 +99,19 @@
       <div class="row">
         <div class="form-group col-sm-3">
           <%= f.label :operator_1, class: 'control-label' %>
-          <%= f.text_field :operator_1, class: 'form-control input-sm', disabled: input_disabled %>
+          <h5><%= @individual_mf_device.operator_1 %></h5>
         </div>
         <div class="form-group col-sm-3">
           <%= f.label :operator_2, class: 'control-label' %>
-          <%= f.text_field :operator_2, class: 'form-control input-sm', disabled: input_disabled %>
+          <h5><%= @individual_mf_device.operator_2 %></h5>
         </div>
         <div class="form-group col-sm-3">
           <%= f.label :operator_3, class: 'control-label' %>
-          <%= f.text_field :operator_3, class: 'form-control input-sm', disabled: input_disabled %>
+          <h5><%= @individual_mf_device.operator_3 %></h5>
         </div>
       </div>
 
     </div> <!-- /col-sm-12 -->
-
   </div> <!-- /row -->
 
   <hr>
@@ -122,7 +119,7 @@
   <div class="row color-section-station">
     <div class="form-group col-sm-6">
       <%= f.label :station_location, class: 'control-label' %>
-      <%= f.text_field :station_location, class: 'form-control input-sm', disabled: input_disabled %>
+      <h5><%= @individual_mf_device.station_location %></h5>
     </div>
   </div> <!-- /row -->
 

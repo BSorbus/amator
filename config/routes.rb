@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
 	  resources :individuals do
 	    post 'datatables_index', on: :collection
+  		get 'export', on: :collection
 	  end
 
 	  resources :clubs do

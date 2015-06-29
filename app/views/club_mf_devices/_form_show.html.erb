@@ -1,15 +1,15 @@
-<%= form_for [@club], :html => { :role => 'form club' } do |f| %>
+<%= form_for [@club_mf_device], :html => { :role => 'form club_mf_device' } do |f| %>
 
   <% input_disabled ||= false  
      #if input_disabled is not passed to the partial it doesn't crash. 
      # We default it to false 
   %>
 
-  <% if @club.errors.any? %>
+  <% if @club_mf_device.errors.any? %>
     <div id="error_explanation" class="panel panel-danger">
       <div class="panel-body">
         <ul>
-        <% @club.errors.full_messages.each do |msg| %>
+        <% @club_mf_device.errors.full_messages.each do |msg| %>
           <li><h5><%= msg %></h5></li>
         <% end %>
         </ul>
@@ -23,12 +23,12 @@
 
         <div class="form-group col-sm-6">
           <%= f.label :department, class: 'control-label' %>
-          <h5><%= @club.department %></h5>
+          <h5><%= @club_mf_device.department %></h5>
         </div>
 
         <div class="form-group col-sm-4">
           <%= f.label :number, class: 'control-label' %>
-          <h5><%= @club.number %></h5>
+          <h5><%= @club_mf_device.number %></h5>
         </div>
 
       </div>  <!-- /row -->
@@ -43,23 +43,50 @@
       <div class="row">
         <div class="form-group col-sm-3">
           <%= f.label :date_of_issue, class: 'control-label' %>
-          <h5><%= @club.date_of_issue %></h5>
+          <h5><%= @club_mf_device.date_of_issue %></h5>
         </div>
         <div class="form-group col-sm-3">
           <%= f.label :valid_to, class: 'control-label' %>
-          <h5><%= @club.valid_to %></h5>
+          <h5><%= @club_mf_device.valid_to %></h5>
         </div>
         <div class="form-group col-sm-2">
           <%= f.label :call_sign, class: 'control-label' %>
-          <h5><%= @club.call_sign %></h5>
+          <h5><%= @club_mf_device.call_sign %></h5>
         </div>
         <div class="form-group col-sm-2">
           <%= f.label :category, class: 'control-label' %>
-          <h5><%= @club.category %></h5>
+          <h5><%= @club_mf_device.category %></h5>
         </div>
         <div class="form-group col-sm-2">
           <%= f.label :transmitter_power, class: 'control-label' %>
-          <h5><%= @club.transmitter_power %></h5>
+          <h5><%= @club_mf_device.transmitter_power %></h5>
+        </div>
+      </div>
+
+    </div> <!-- /col-sm-12 -->
+
+  </div> <!-- /row -->
+
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="row">
+        <div class="form-group col-sm-3">
+          <%= f.label :name_type_station, class: 'control-label' %>
+          <h5><%= @club_mf_device.name_type_station %></h5>
+        </div>
+        <div class="form-group col-sm-3">
+          <%= f.label :emission, class: 'control-label' %>
+          <h5><%= @club_mf_device.emission %></h5>
+        </div>
+        <div class="form-group col-sm-3">
+          <%= f.label :input_frequency, class: 'control-label' %>
+          <h5><%= @club_mf_device.input_frequency %></h5>
+        </div>
+        <div class="form-group col-sm-3">
+          <%= f.label :output_frequency, class: 'control-label' %>
+          <h5><%= @club_mf_device.output_frequency %></h5>
         </div>
       </div>
 
@@ -74,15 +101,15 @@
       <div class="row">
         <div class="form-group col-sm-3">
           <%= f.label :operator_1, class: 'control-label' %>
-          <h5><%= @club.operator_1 %></h5>
+          <h5><%= @club_mf_device.operator_1 %></h5>
         </div>
         <div class="form-group col-sm-3">
           <%= f.label :operator_2, class: 'control-label' %>
-          <h5><%= @club.operator_2 %></h5>
+          <h5><%= @club_mf_device.operator_2 %></h5>
         </div>
         <div class="form-group col-sm-3">
           <%= f.label :operator_3, class: 'control-label' %>
-          <h5><%= @club.operator_3 %></h5>
+          <h5><%= @club_mf_device.operator_3 %></h5>
         </div>
       </div>
 
@@ -95,7 +122,7 @@
   <div class="row color-section-applicant-top">
     <div class="form-group col-sm-6">
       <%= f.label :applicant_name, class: 'control-label' %>
-      <h5><%= @club.applicant_name %></h5>
+      <h5><%= @club_mf_device.applicant_name %></h5>
     </div>
   </div> <!-- /row -->
 
@@ -105,19 +132,19 @@
       <div class="row">
         <div class="form-group col-sm-4">
           <%= f.label :applicant_city, class: 'control-label' %>
-          <h5><%= @club.applicant_city %></h5>
+          <h5><%= @club_mf_device.applicant_city %></h5>
         </div>
         <div class="form-group col-sm-4">
           <%= f.label :applicant_street, class: 'control-label' %>
-          <h5><%= @club.applicant_street %></h5>
+          <h5><%= @club_mf_device.applicant_street %></h5>
         </div>
         <div class="form-group col-sm-2">
           <%= f.label :applicant_house, class: 'control-label' %>
-          <h5><%= @club.applicant_house %></h5>
+          <h5><%= @club_mf_device.applicant_house %></h5>
         </div>
         <div class="form-group col-sm-2">
           <%= f.label :applicant_number, class: 'control-label' %>
-          <h5><%= @club.applicant_number %></h5>
+          <h5><%= @club_mf_device.applicant_number %></h5>
         </div>
       </div>
 
@@ -131,7 +158,7 @@
   <div class="row color-section-enduser-top">
     <div class="form-group col-sm-6">
       <%= f.label :enduser_name, class: 'control-label' %>
-      <h5><%= @club.enduser_name %></h5>
+      <h5><%= @club_mf_device.enduser_name %></h5>
     </div>
   </div> <!-- /row -->
 
@@ -141,19 +168,19 @@
       <div class="row">
         <div class="form-group col-sm-4">
           <%= f.label :enduser_city, class: 'control-label' %>
-          <h5><%= @club.enduser_city %></h5>
+          <h5><%= @club_mf_device.enduser_city %></h5>
         </div>
         <div class="form-group col-sm-4">
           <%= f.label :enduser_street, class: 'control-label' %>
-          <h5><%= @club.enduser_street %></h5>
+          <h5><%= @club_mf_device.enduser_street %></h5>
         </div>
         <div class="form-group col-sm-2">
           <%= f.label :enduser_house, class: 'control-label' %>
-          <h5><%= @club.enduser_house %></h5>
+          <h5><%= @club_mf_device.enduser_house %></h5>
         </div>
         <div class="form-group col-sm-2">
           <%= f.label :enduser_number, class: 'control-label' %>
-          <h5><%= @club.enduser_number %></h5>
+          <h5><%= @club_mf_device.enduser_number %></h5>
         </div>
       </div>
 
@@ -169,19 +196,19 @@
       <div class="row">
         <div class="form-group col-sm-4">
           <%= f.label :station_city, class: 'control-label' %>
-          <h5><%= @club.station_city %></h5>
+          <h5><%= @club_mf_device.station_city %></h5>
         </div>
         <div class="form-group col-sm-4">
           <%= f.label :station_street, class: 'control-label' %>
-          <h5><%= @club.station_street %></h5>
+          <h5><%= @club_mf_device.station_street %></h5>
         </div>
         <div class="form-group col-sm-2">
           <%= f.label :station_house, class: 'control-label' %>
-          <h5><%= @club.station_house %></h5>
+          <h5><%= @club_mf_device.station_house %></h5>
         </div>
         <div class="form-group col-sm-2">
           <%= f.label :station_number, class: 'control-label' %>
-          <h5><%= @club.station_number %></h5>
+          <h5><%= @club_mf_device.station_number %></h5>
         </div>
       </div>
 
@@ -194,25 +221,25 @@
 
   <% if input_disabled %>
     <!-- for "Show" -->
-    <%= link_to t('Index', default: t("helpers.links.index")), clubs_path, :class => 'btn btn-default glyphicon glyphicon-th-list' %>
+    <%= link_to t('Index', default: t("helpers.links.index")), club_mf_devices_path, :class => 'btn btn-default glyphicon glyphicon-th-list' %>
 
     <% if user_signed_in? %>
-      <% if policy(@club).destroy? %>
+      <% if policy(@club_mf_device).destroy? %>
 
-        <%= link_to t('Delete', default: t("helpers.links.destroy")), club_path(@club),
+        <%= link_to t('Delete', default: t("helpers.links.destroy")), club_mf_device_path(@club_mf_device),
                           method: :delete,
-                          data: { confirm: t('helpers.links.confirm_destroy', data: @club.fullname) },
+                          data: { confirm: t('helpers.links.confirm_destroy', data: @club_mf_device.fullname) },
                           :class => "btn btn-danger glyphicon glyphicon-trash" %>
       <% end %>
 
-      <% if policy(@club).edit? %>
-        <%= link_to t('Edit', default: t("helpers.links.edit")), edit_club_path(@club), 
+      <% if policy(@club_mf_device).edit? %>
+        <%= link_to t('Edit', default: t("helpers.links.edit")), edit_club_mf_device_path(@club_mf_device), 
                           :class => "btn btn-primary glyphicon glyphicon-edit" %>  
       <% end %>
     <% end %>
   <% else %>
     <!-- form "New"/"Edit" -->
-    <%= link_to t('Index', default: t("helpers.links.index")), clubs_path, :class => 'btn btn-default glyphicon glyphicon-th-list' %>
+    <%= link_to t('Index', default: t("helpers.links.index")), club_mf_devices_path, :class => 'btn btn-default glyphicon glyphicon-th-list' %>
     <%= link_to t('Back', default: t("helpers.links.back")), :back, :class => 'btn btn-default' %>
     <% if user_signed_in? %>
       <%= f.submit nil, :class => 'btn btn-primary' %>

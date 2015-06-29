@@ -20,6 +20,7 @@ pl:
       edit: " Edycja"
       index: " Lista"
       send_email: " Wyślij email"
+      download: " Pobierz"
     titles:
       edit: "Edycja %{model}"
       save: "Zapisz %{model}"

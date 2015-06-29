@@ -1,79 +1,20 @@
-<p id="notice"><%= notice %></p>
+<br>
+<!-- Dane -->
+<div class="row">
+  <div class="col-sm-12">
+    <div class="panel panel-individual-mf-device">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <span class="glyphicon glyphicon-modal-window">  <%= @individual_mf_device.fullname %></span>    
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="col-sm-11 col-sm-offset-1">
 
-<p>
-  <strong>Department:</strong>
-  <%= @individual_mf_device.department %>
-</p>
+          <%= render 'form_show', input_disabled: true %>
 
-<p>
-  <strong>Number:</strong>
-  <%= @individual_mf_device.number %>
-</p>
-
-<p>
-  <strong>Date of issue:</strong>
-  <%= @individual_mf_device.date_of_issue %>
-</p>
-
-<p>
-  <strong>Valid to:</strong>
-  <%= @individual_mf_device.valid_to %>
-</p>
-
-<p>
-  <strong>Call sign:</strong>
-  <%= @individual_mf_device.call_sign %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @individual_mf_device.category %>
-</p>
-
-<p>
-  <strong>Transmitter power:</strong>
-  <%= @individual_mf_device.transmitter_power %>
-</p>
-
-<p>
-  <strong>Name type station:</strong>
-  <%= @individual_mf_device.name_type_station %>
-</p>
-
-<p>
-  <strong>Emission:</strong>
-  <%= @individual_mf_device.emission %>
-</p>
-
-<p>
-  <strong>Input frequency:</strong>
-  <%= @individual_mf_device.input_frequency %>
-</p>
-
-<p>
-  <strong>Output frequency:</strong>
-  <%= @individual_mf_device.output_frequency %>
-</p>
-
-<p>
-  <strong>Operator 1:</strong>
-  <%= @individual_mf_device.operator_1 %>
-</p>
-
-<p>
-  <strong>Operator 2:</strong>
-  <%= @individual_mf_device.operator_2 %>
-</p>
-
-<p>
-  <strong>Operator 3:</strong>
-  <%= @individual_mf_device.operator_3 %>
-</p>
-
-<p>
-  <strong>Station location:</strong>
-  <%= @individual_mf_device.station_location %>
-</p>
-
-<%= link_to 'Edit', edit_individual_mf_device_path(@individual_mf_device) %> |
-<%= link_to 'Back', individual_mf_devices_path %>
+        </div> <!--/col-sm-11 col-sm-offset-1-->    
+      </div>
+    </div> <!-- /panel -->
+  </div> <!-- /col-sm-12-->
+</div> <!-- /row -->

@@ -65,44 +65,71 @@ hr {
   color: white; 
 }
 
-.panel-family {
+.panel-individual-mf-device {
   border-color: #ddd  
 }
-.panel-family > .panel-heading {
-  background: #89877a;
+.panel-individual-mf-device > .panel-heading {
+  background: #7fc196; //#89877a; //#4E7F5F; 
   color: white; 
 }
 
-.panel-rotation {
+.panel-club-mf-device {
   border-color: #ddd  
 }
-.panel-rotation > .panel-heading {
+.panel-club-mf-device > .panel-heading {
   background: #a4bacc;
-  color: white; 
+  color: white;  
 }
 
-.panel-discount {
-  border-color: #ddd  
-}
-.panel-discount > .panel-heading {
-  background: #4E7F5F; //#7fc196;
-  color: white; 
-}
-
-.panel-coverage {
-  border-color: #ddd  
-}
-.panel-coverage > .panel-heading {
-  background: #529889; 
-  color: white; 
+.color-section-applicant-top {
+  padding-top: 15px;
+  margin-top: -15px;
+  //background: Ivory; //#E6E6B8;
+  background: #FCFCFC;
+  color: black; 
 }
 
-.panel-print {
-  border-color: #ddd  
+.color-section-applicant {
+  padding-top: 15px;
+  margin-top: -15px;
+  padding-bottom: 3px;
+  margin-bottom: -3px;
+  background: #FCFCFC;
+  color: black; 
 }
-.panel-print > .panel-heading {
-  background: #d3c6c6;
-  color: white; 
+
+.color-section-enduser-top {
+  padding-top: 15px;
+  margin-top: -15px;
+  //background: #F6F6E0;
+  background: #F8F8F8;
+  color: black; 
+}
+
+.color-section-enduser {
+  padding-top: 15px;
+  margin-top: -15px;
+  padding-bottom: 3px;
+  margin-bottom: -3px;
+  background: #F8F8F8;
+  color: black; 
+}
+
+.color-section-station-top {
+  padding-top: 15px;
+  margin-top: -15px;
+  //background: #E6E6B8; //Ivory;
+  background: #F4F4F4;
+  color: black; 
+}
+
+.color-section-station {
+  padding-top: 15px;
+  margin-top: -15px;
+  padding-bottom: 3px;
+  margin-bottom: -3px;
+  background: #F4F4F4;
+  color: black; 
 }
 
 

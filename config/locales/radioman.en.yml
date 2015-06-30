@@ -26,6 +26,8 @@ en:
       index:
         title: 'Clubs'
       new: " New for Clubs"
+      show:
+        other_stations: "Other club stations within a radius of 25km :"
     individual_mf_devices:
       index:
         title: 'Maintenance-free devices for natural persons'
@@ -34,6 +36,8 @@ en:
       index:
         title: 'Maintenance-free devices for legal entity'
       new: " New"
+      show:
+        other_stations: "Other club, m-free stations within a radius of 25km :"
     footer:
       contact: 'Contact:'
       links: 'Links:'
@@ -108,6 +112,8 @@ en:
         station_street: 'Station - Street'
         station_house: 'Station - House'
         station_number: 'Station - Number'
+        lat: 'Station - latitude'
+        lng: 'Station - longitude'
       individual_mf_device:
         department: 'Department'
         number: 'Number'

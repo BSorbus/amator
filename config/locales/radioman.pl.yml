@@ -26,6 +26,8 @@ pl:
       index:
         title: 'Kluby'
       new: " Nowy dla Kluby"
+      show:
+        other_stations: "Inne stacje klubowe w promieniu 25 km :"
     individual_mf_devices:
       index:
         title: 'Urządzenia bezobsługowe dla Osób'
@@ -34,6 +36,8 @@ pl:
       index:
         title: 'Urządzenia bezobsługowe dla Klubów'
       new: " Nowy wpis"
+      show:
+        other_stations: "Inne stacje klubowe, bezobsługowe w promieniu 25 km :"
     footer:
       contact: 'Kontakt:'
       links: 'Zobacz też:'
@@ -108,6 +112,8 @@ pl:
         station_street: 'Stacja - Ulica'
         station_house: 'Stacja - Dom'
         station_number: 'Stacja - Lokal'
+        lat: 'Stacja - latitude'
+        lng: 'Stacja - longitude'
       individual_mf_device:
         department: 'Delegatura'
         number: 'Numer'

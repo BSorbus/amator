@@ -33,6 +33,8 @@ class ClubsController < ApplicationController
   # GET /clubs/1
   # GET /clubs/1.json
   def show
+    @other_club_stations = @club.nearbys(25)
+    #@other_stations = Location.near(params[:search], 50, :order => :distance)
   end
 
   # GET /clubs/new
@@ -102,6 +104,6 @@ class ClubsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def club_params
-      params.require(:club).permit(:department, :number, :date_of_issue, :valid_to, :call_sign, :category, :transmitter_power, :operator_1, :operator_2, :operator_3, :enduser_name, :enduser_city, :enduser_street, :enduser_house, :enduser_number, :applicant_name, :applicant_city, :applicant_street, :applicant_house, :applicant_number, :station_city, :station_street, :station_house, :station_number)
+      params.require(:club).permit(:department, :number, :date_of_issue, :valid_to, :call_sign, :category, :transmitter_power, :operator_1, :operator_2, :operator_3, :enduser_name, :enduser_city, :enduser_street, :enduser_house, :enduser_number, :applicant_name, :applicant_city, :applicant_street, :applicant_house, :applicant_number, :station_city, :station_street, :station_house, :station_number, :lat, :lng)
     end
 end

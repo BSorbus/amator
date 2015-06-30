@@ -43,3 +43,5 @@ end
 gem 'kaminari'
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 gem 'ajax-datatables-rails', git: 'git://github.com/antillas21/ajax-datatables-rails.git', branch: 'master'
+gem 'geocoder'
+gem 'gmaps4rails'

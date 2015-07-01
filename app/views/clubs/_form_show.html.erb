@@ -210,9 +210,9 @@
         <div class="col-md-5">
           <h5><%= t(' Other', default: t("pages.clubs.show.other_stations")) %></h5>
 
-            <% @other_club_stations.each do |location| %>
+            <% for location in @other_club_stations do %>
               <li><%= link_to location.fullname, club_path(location) %> (<%= location.distance.round(2) %> km)</li>
-          <% end %>
+            <% end %>
  
         </div> <!-- /<div class="col-md-4"> -->
 

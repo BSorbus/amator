@@ -210,12 +210,20 @@
         <div class="col-md-5">
           <h5><%= t(' Other', default: t("pages.clubs.show.other_stations")) %></h5>
 
-            <% for location in @other_club_stations do %>
-              <li><%= link_to location.fullname, club_path(location) %> (<%= location.distance.round(2) %> km)</li>
+            <% if @other_club_stations.present? %>        
+              <% for location in @other_club_stations do %>
+                <li><%= link_to location.fullname, club_path(location) %> (<%= location.distance.round(2) %> km)</li>
+              <% end %>
             <% end %>
  
         </div> <!-- /<div class="col-md-4"> -->
 
+      </div> <!-- /row -->
+
+      <div class="row">
+        <div class="col-md-7">
+          <small class="help-block"><%=t 'help_block_text.clubs.show.map_info' %></small>        
+        </div>
       </div>
 
     </div> <!-- /col-sm-12 -->

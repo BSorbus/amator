@@ -9,8 +9,8 @@ function gmap_uke_show() {
       }
     ]);
     handler.bounds.extendWith(markers);
+    handler.map.centerOn([52.229314, 20.972997]);
     handler.fitMapToBounds();
-    handler.map.centerOn([52.229354, 20.972997]);
     handler.getMap().setZoom(17);    // set the default zoom of the map
   });
 };

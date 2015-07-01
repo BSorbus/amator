@@ -170,6 +170,10 @@ pl:
         short: 'np. ARTEX'
         name: 'np. Artex-Software Sp z o.o.'
       index:
+  help_block_text:
+    clubs:
+      show:
+        map_info: 'Uwaga! Program ustala szerokość i długość geograficzną wykorzystując Geocoder i Google Maps. Prezentacje na mapie należy traktować wylącznie jako informacje przybliżone.'
   flash:
     actions:
       create:

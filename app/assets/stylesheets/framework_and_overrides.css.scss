@@ -5,7 +5,10 @@ $font-size-base: 14px;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
+//bez tego nie wyswietla icon nawigacji po lewej stronie w GoogleMaps
+#map img {
+  max-width: none;
+}
 
 //table.dataTable thead .sorting_asc { background: none }
 //table.dataTable thead .sorting_desc { background: none }

@@ -171,9 +171,7 @@ en:
         name: 'eg.: Artex-Software Sp z o.o.'
       index:
   help_block_text:
-    clubs:
-      show:
-        map_info: 'Caution! The program establishes the latitude and longitude using Geocoder and Google Maps. Presentations on the map should be regarded solely as information approximate.'
+    map_info: 'Caution! The program establishes the latitude and longitude using Geocoder and Google Maps. Presentations on the map should be regarded solely as information approximate.'
   flash:
     actions:
       create:

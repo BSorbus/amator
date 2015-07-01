@@ -3,8 +3,13 @@ class ClubMfDevice < ActiveRecord::Base
   geocoded_by :full_station_address, :latitude => :lat, :longitude => :lng  # can also be an IP address
   after_validation :geocode           # auto-fetch coordinates
 
+
   def fullname
     "#{number}, #{call_sign}"
+  end
+
+  def fullname_with_station_address
+    "#{number}, #{call_sign} (#{station_city}, #{station_street})"
   end
 
   def full_station_address

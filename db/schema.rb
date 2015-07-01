@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(version: 20150630212654) do
     t.string   "station_street",    limit: 255
     t.string   "station_house",     limit: 255
     t.string   "station_number",    limit: 255
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
-    t.decimal  "lat",                           precision: 10
-    t.decimal  "lng",                           precision: 10
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.float    "lat",               limit: 24
+    t.float    "lng",               limit: 24
   end
 
   add_index "club_mf_devices", ["applicant_name"], name: "index_club_mf_devices_on_applicant_name", using: :btree
@@ -84,10 +84,10 @@ ActiveRecord::Schema.define(version: 20150630212654) do
     t.string   "station_street",    limit: 255
     t.string   "station_house",     limit: 255
     t.string   "station_number",    limit: 255
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
-    t.decimal  "lat",                           precision: 10
-    t.decimal  "lng",                           precision: 10
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.float    "lat",               limit: 24
+    t.float    "lng",               limit: 24
   end
 
   add_index "clubs", ["applicant_name"], name: "index_clubs_on_applicant_name", using: :btree

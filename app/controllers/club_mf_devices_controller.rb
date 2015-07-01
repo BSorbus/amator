@@ -33,6 +33,7 @@ class ClubMfDevicesController < ApplicationController
   # GET /club_mf_devices/1
   # GET /club_mf_devices/1.json
   def show
+    @other_club_mf_device_stations = @club_mf_device.nearbys(25)
   end
 
   # GET /club_mf_devices/new

@@ -8,6 +8,10 @@ class Club < ActiveRecord::Base
     "#{number}, #{call_sign}"
   end
 
+  def fullname_with_station_address
+    "#{number}, #{call_sign} (#{station_city}, #{station_street})"
+  end
+
   def full_station_address
     "pl, #{station_city}, #{station_street}"
   end

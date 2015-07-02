@@ -23,6 +23,7 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
+  gem 'brakeman', :require => false  
 end
 group :development, :test do
   gem 'factory_girl_rails'
@@ -42,7 +43,10 @@ group :test do
 end
 
 gem 'kaminari'
-gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
-gem 'ajax-datatables-rails', git: 'git://github.com/antillas21/ajax-datatables-rails.git', branch: 'master'
+#gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+gem 'jquery-datatables-rails'
+#gem 'ajax-datatables-rails', git: 'git://github.com/antillas21/ajax-datatables-rails.git', branch: 'master'
+# gdy z GitHube jak powyżej, to są problemy z ikonami sortowania
+gem 'ajax-datatables-rails'
 gem 'geocoder'
 gem 'gmaps4rails'

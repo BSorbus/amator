@@ -13,7 +13,6 @@ class ClubMfDeviceDatatable < AjaxDatatablesRails::Base
     @sortable_columns ||= %w( 
                               ClubMfDevice.department 
                               ClubMfDevice.number 
-                              ClubMfDevice.date_of_issue 
                               ClubMfDevice.valid_to 
                               ClubMfDevice.call_sign 
                               ClubMfDevice.category 
@@ -36,7 +35,6 @@ class ClubMfDeviceDatatable < AjaxDatatablesRails::Base
     @searchable_columns ||= %w(
                               ClubMfDevice.department 
                               ClubMfDevice.number 
-                              ClubMfDevice.date_of_issue 
                               ClubMfDevice.valid_to 
                               ClubMfDevice.call_sign 
                               ClubMfDevice.category 
@@ -61,7 +59,6 @@ class ClubMfDeviceDatatable < AjaxDatatablesRails::Base
         record.id,
         record.department, 
         record.number,
-        record.date_of_issue,
         record.valid_to,
         record.call_sign,
         record.category,

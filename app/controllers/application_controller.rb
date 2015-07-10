@@ -34,7 +34,8 @@ class ApplicationController < ActionController::Base
 
 
   def request_from_the_security_area?
-    @ips = ['127.0.0.1', '192.168.1.0/24'] #And so on ...]
+    #@ips = ['127.0.0.1', '192.168.1.0/24'] #And so on ...]
+    @ips = ['127.0.0.1', '172.16.1.0/24'] #And so on ...]
     allowed = false
     # Convert remote IP (request.remote_ip is a string) to an integer.
     bremote_ip = request.remote_ip.split('.').map(&:to_i).pack('C*').unpack('N').first

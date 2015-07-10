@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.1'
+#ruby '2.2.1'
 gem 'rails', '4.2.3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -46,7 +46,7 @@ gem 'kaminari'
 #gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 gem 'jquery-datatables-rails'
 #gem 'ajax-datatables-rails', git: 'git://github.com/antillas21/ajax-datatables-rails.git', branch: 'master'
-# gdy z GitHube jak powyżej, to są problemy z ikonami sortowania
+# gdy z GitHub jak powyżej, to są problemy z ikonami sortowania
 gem 'ajax-datatables-rails'
 gem 'geocoder'
 gem 'gmaps4rails'

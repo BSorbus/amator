@@ -13,7 +13,6 @@ class IndividualDatatable < AjaxDatatablesRails::Base
     @sortable_columns ||= %w( 
                               Individual.department 
                               Individual.number 
-                              Individual.date_of_issue 
                               Individual.valid_to 
                               Individual.call_sign 
                               Individual.category 
@@ -28,7 +27,6 @@ class IndividualDatatable < AjaxDatatablesRails::Base
     @searchable_columns ||= %w(
                               Individual.department 
                               Individual.number 
-                              Individual.date_of_issue 
                               Individual.valid_to 
                               Individual.call_sign 
                               Individual.category 
@@ -45,7 +43,6 @@ class IndividualDatatable < AjaxDatatablesRails::Base
         record.id,
         record.department, 
         record.number,
-        record.date_of_issue,
         record.valid_to,
         record.call_sign,
         record.category,

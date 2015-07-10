@@ -1,5 +1,5 @@
 en:
-  home: 'Radio amateurs'
+  home: 'Home'
   content_title: "Radio amateurs"
   restricted_area: "Restricted area!"
   pages: 
@@ -7,13 +7,13 @@ en:
       index:
         title: 'Welcome to the online registry'
         title_sub: 'the Amateur Radio Authorizations'
-        sub_individuals: 'Natural persons'
-        sub_individuals_text: 'A list of authorizations issued for natural persons'
+        sub_individuals: 'Private persons'
+        sub_individuals_text: 'A list of authorizations issued for private persons'
         sub_clubs: 'Legal entity'
         sub_clubs_text: 'A list of authorizations issued for legal entity'
-        sub_mfree_individuals: 'Maintenance-free devices for natural persons'
-        sub_mfree_individuals_text: 'A list of authorizations issued for natural persons'
-        sub_mfree_clubs: 'Maintenance-free devices for legal entity'
+        sub_mfree_individuals: 'Individual automatic stations'
+        sub_mfree_individuals_text: 'A list of authorizations issued for private persons'
+        sub_mfree_clubs: 'Club automatic stations'
         sub_mfree_clubs_text: 'A list of authorizations issued for legal entity'
     users:
       index:
@@ -30,14 +30,14 @@ en:
         other_stations: "Other club stations within a radius of 25km :"
     individual_mf_devices:
       index:
-        title: 'Maintenance-free devices for natural persons'
+        title: 'Individual automatic stations'
       new: " New"
     club_mf_devices:
       index:
-        title: 'Maintenance-free devices for legal entity'
+        title: 'Club automatic stations'
       new: " New"
       show:
-        other_stations: "Other club, m-free stations within a radius of 25km :"
+        other_stations: "Other club, automatic stations within a radius of 25km :"
     footer:
       contact: 'Contact:'
       links: 'Links:'
@@ -50,8 +50,8 @@ en:
   link_to:
     individuals: 'Individuals'
     clubs: 'Clubs'
-    individual_mf_devices: 'M-free for Individuals'
-    club_mf_devices: 'M-free for Clubs'
+    individual_mf_devices: 'Individual automatic stations'
+    club_mf_devices: 'Club automatic stations'
   pundit:
     default: ' SECURITY: Access denied!'
     user_policy:
@@ -62,8 +62,8 @@ en:
       user: 'User'
       individual: 'Individual'
       club: 'Club'
-      individual_mf_device: 'Maintenance-free devices for natural persons'
-      club_mf_device: 'Maintenance-free devices for legal entity'
+      individual_mf_device: 'Individual automatic stations'
+      club_mf_device: 'Club automatic stations'
     messages:
       successfull:
         created: '"%{data}" was successfully created.'
@@ -82,7 +82,7 @@ en:
         department: 'Department'
         number: 'Number'
         date_of_issue: 'Date of issue'
-        valid_to: 'Valid to'
+        valid_to: 'Valid thru'
         call_sign: 'Call sign'
         category: 'Class'
         transmitter_power: 'Power'
@@ -91,7 +91,7 @@ en:
         department: 'Department'
         number: 'Number'
         date_of_issue: 'Date of issue'
-        valid_to: 'Valid to'
+        valid_to: 'Valid thru'
         call_sign: 'Call sign'
         category: 'Category'
         transmitter_power: 'Power'
@@ -118,11 +118,11 @@ en:
         department: 'Department'
         number: 'Number'
         date_of_issue: 'Date of issue'
-        valid_to: 'Valid to'
+        valid_to: 'Valid thru'
         call_sign: 'Call sign'
         category: 'Class'
         transmitter_power: 'Power'
-        name_type_station: 'Name of station type'
+        name_type_station: 'Station type'
         emission: 'Emission'
         input_frequency: 'Input frequency'
         output_frequency: 'Output frequency'
@@ -134,11 +134,11 @@ en:
         department: 'Department'
         number: 'Number'
         date_of_issue: 'Date of issue'
-        valid_to: 'Valid to'
+        valid_to: 'Valid thru'
         call_sign: 'Call sign'
         category: 'Category'
         transmitter_power: 'Power'
-        name_type_station: 'Name of station type'
+        name_type_station: 'Station type'
         emission: 'Emission'
         input_frequency: 'Input frequency'
         output_frequency: 'Output frequency'

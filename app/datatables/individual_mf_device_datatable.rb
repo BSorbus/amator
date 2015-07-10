@@ -13,7 +13,6 @@ class IndividualMfDeviceDatatable < AjaxDatatablesRails::Base
     @sortable_columns ||= %w( 
                               IndividualMfDevice.department 
                               IndividualMfDevice.number 
-                              IndividualMfDevice.date_of_issue 
                               IndividualMfDevice.valid_to 
                               IndividualMfDevice.call_sign 
                               IndividualMfDevice.category 
@@ -35,7 +34,6 @@ class IndividualMfDeviceDatatable < AjaxDatatablesRails::Base
     @searchable_columns ||= %w(
                               IndividualMfDevice.department 
                               IndividualMfDevice.number 
-                              IndividualMfDevice.date_of_issue 
                               IndividualMfDevice.valid_to 
                               IndividualMfDevice.call_sign 
                               IndividualMfDevice.category 
@@ -59,7 +57,6 @@ class IndividualMfDeviceDatatable < AjaxDatatablesRails::Base
         record.id,
         record.department, 
         record.number,
-        record.date_of_issue,
         record.valid_to,
         record.call_sign,
         record.category,

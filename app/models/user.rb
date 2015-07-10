@@ -7,9 +7,9 @@ class User < ActiveRecord::Base
   end
 
   # Include default devise modules. Others available are:
-  # :lockable, :omniauthable
+  # :rememberable, :lockable, :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :timeoutable, :confirmable, 
-  		:rememberable, :trackable, :validatable, :authentication_keys => [:email]
+  		:trackable, :validatable, :authentication_keys => [:email]
 
 	#validates_format_of :email, :with =>  /\A[\w+\-.]+@uke.gov.pl/i
   #validacja w /config/initializers/device.rb -> config.email_regexp = /\A([\w\.%\+\-]+)@uke\.gov\.pl\z/i

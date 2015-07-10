@@ -18,13 +18,12 @@ class Club < ActiveRecord::Base
 
   def self.to_csv
     CSV.generate(headers: false, col_sep: ';', converters: nil, skip_blanks: false, force_quotes: false) do |csv|
-      columns_header = %w{department number date_of_issue valid_to call_sign category transmitter_power operator_1 operator_2 operator_3 applicant_name applicant_city applicant_street applicant_house applicant_number enduser_name enduser_city enduser_street enduser_house enduser_number	station_city station_street station_house station_number }
+      columns_header = %w{department number valid_to call_sign category transmitter_power operator_1 operator_2 operator_3 applicant_name applicant_city applicant_street applicant_house applicant_number enduser_name enduser_city enduser_street enduser_house enduser_number	station_city station_street station_house station_number }
       csv << columns_header
       all.each do |rec|
         csv << [
                 rec.department.strip, 
                 rec.number.strip,
-                rec.date_of_issue, 
                 rec.valid_to, 
                 rec.call_sign,
                 rec.category, 

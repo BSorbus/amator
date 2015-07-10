@@ -1,5 +1,5 @@
 pl:
-  home: 'Radioamator'
+  home: 'Strona główna'
   content_title: "Radioamator"
   restricted_area: "Obszar ograniczony!"
   pages:
@@ -122,7 +122,7 @@ pl:
         call_sign: 'Znak'
         category: 'Kategoria'
         transmitter_power: 'Moc'
-        name_type_station: 'Nazwa rodzaju stacji'
+        name_type_station: 'Rodzaj stacji'
         emission: 'Emisja'
         input_frequency: 'Częstotliwość wej'
         output_frequency: 'Częstotliwość wyj'

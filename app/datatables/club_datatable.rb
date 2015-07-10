@@ -13,7 +13,6 @@ class ClubDatatable < AjaxDatatablesRails::Base
     @sortable_columns ||= %w( 
                               Club.department 
                               Club.number 
-                              Club.date_of_issue 
                               Club.valid_to 
                               Club.call_sign 
                               Club.category 
@@ -32,7 +31,6 @@ class ClubDatatable < AjaxDatatablesRails::Base
     @searchable_columns ||= %w(
                               Club.department 
                               Club.number 
-                              Club.date_of_issue 
                               Club.valid_to 
                               Club.call_sign 
                               Club.category 
@@ -53,7 +51,6 @@ class ClubDatatable < AjaxDatatablesRails::Base
         record.id,
         record.department, 
         record.number,
-        record.date_of_issue,
         record.valid_to,
         record.call_sign,
         record.category,

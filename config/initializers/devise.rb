@@ -14,7 +14,8 @@ Devise.setup do |config|
   config.mailer_sender = Rails.application.secrets.email_provider_username
 
   # Configure the class responsible to send e-mails.
-  # config.mailer = 'Devise::Mailer'
+  #config.mailer = 'Devise::Mailer'
+  config.mailer = 'MyMailer' #BJ 2015.07.28
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and

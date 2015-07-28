@@ -10,24 +10,24 @@ class IndividualMfDevice < ActiveRecord::Base
       csv << columns_header
       all.each do |rec|
         csv << [
-                rec.department.strip, 
+                rec.department.strip,
                 rec.number.strip,
-                rec.valid_to, 
+                rec.valid_to,
                 rec.call_sign,
-                rec.category, 
-                rec.transmitter_power, 
-                rec.name_type_station, 
-                rec.emission, 
-                rec.input_frequency, 
-                rec.output_frequency, 
-                rec.operator_1, 
-                rec.operator_2, 
-                rec.operator_3, 
+                rec.category,
+                rec.transmitter_power,
+                rec.name_type_station,
+                rec.emission,
+                rec.input_frequency,
+                rec.output_frequency,
+                rec.operator_1,
+                rec.operator_2,
+                rec.operator_3,
                 rec.station_location
             	]
       end
 
-    end.encode('WINDOWS-1250')     
+    end.encode('WINDOWS-1250')
   end
 
 

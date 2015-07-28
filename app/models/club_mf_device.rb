@@ -22,37 +22,37 @@ class ClubMfDevice < ActiveRecord::Base
       csv << columns_header
       all.each do |rec|
         csv << [
-                rec.department.strip, 
+                rec.department.strip,
                 rec.number.strip,
-                rec.valid_to, 
+                rec.valid_to,
                 rec.call_sign,
-                rec.category, 
-                rec.transmitter_power, 
-                rec.name_type_station, 
-                rec.emission, 
-                rec.input_frequency, 
-                rec.output_frequency, 
-                rec.operator_1, 
-                rec.operator_2, 
-                rec.operator_3, 
-                rec.applicant_name, 
-                rec.applicant_city, 
-                rec.applicant_street, 
-                rec.applicant_house, 
-                rec.applicant_number, 
-                rec.enduser_name, 
-                rec.enduser_city, 
-                rec.enduser_street, 
-                rec.enduser_house, 
-                rec.enduser_number, 
-                rec.station_city, 
-                rec.station_street, 
-                rec.station_house, 
+                rec.category,
+                rec.transmitter_power,
+                rec.name_type_station,
+                rec.emission,
+                rec.input_frequency,
+                rec.output_frequency,
+                rec.operator_1,
+                rec.operator_2,
+                rec.operator_3,
+                rec.applicant_name,
+                rec.applicant_city,
+                rec.applicant_street,
+                rec.applicant_house,
+                rec.applicant_number,
+                rec.enduser_name,
+                rec.enduser_city,
+                rec.enduser_street,
+                rec.enduser_house,
+                rec.enduser_number,
+                rec.station_city,
+                rec.station_street,
+                rec.station_house,
                 rec.station_number
             	]
       end
 
-    end.encode('WINDOWS-1250')     
+    end.encode('WINDOWS-1250')
   end
 
 

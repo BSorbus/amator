@@ -5,9 +5,7 @@
   </head>
   <body>
     <%= image_tag attachments['logo.png'].url %>
-    <br>
     <h3>Witaj <%= @user.email %>!</h3>
-    <br>
   	<p>Gratulujemy!</p>
   	<p>Zarejestrowałeś się w programie <strong>Radioamator</strong>. Aby zakończyć proces rejestracji musisz aktywować swoje konto wybierając link poniżej:</p>
   	<p><%= link_to 'Aktywuj konto', confirmation_url(@resource, confirmation_token: @token) %></p>

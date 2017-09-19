@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe IndividualMfDevice, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'instantiation' do
+    #let!(:individual) { build(:club) }
+    let (:individual_mf_device) { FactoryGirl.build_stubbed :individual_mf_device }
+
+    it 'instantiates a list' do
+      expect(individual_mf_device.class.name).to eq("IndividualMfDevice")
+    end
+  end
+
 end

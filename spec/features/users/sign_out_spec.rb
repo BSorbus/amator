@@ -8,12 +8,13 @@ feature 'Sign out', :devise do
   #   Given I am signed in
   #   When I sign out
   #   Then I see a signed out message
-  scenario 'user signs out successfully' do
+  scenario '1. User signs out successfully' do
     user = FactoryGirl.create(:user)
     signin(user.email, user.password)
-    expect(page).to have_content I18n.t 'devise.sessions.signed_in'
-    click_link 'Sign out'
-    expect(page).to have_content I18n.t 'devise.sessions.signed_out'
+    expect(page).to have_content I18n.t 'devise.sessions.user.signed_in'
+    #click_link 'Sign out'
+    click_link I18n.t "devise.link_to.sign_out"
+    expect(page).to have_content I18n.t 'devise.sessions.user.signed_out'
   end
 
 end

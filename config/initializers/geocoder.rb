@@ -1,10 +1,29 @@
 Geocoder.configure(
-  # geocoding service
-  lookup: :google,
 
-  # geocoding service request timeout (in seconds)
-  timeout: 3,
+  :timeout=>20,
 
-  # default units
-  units: :km
+  :lookup=>:google,
+
+  :ip_lookup=>:telize,
+
+  :language=>:pl,
+
+  :http_headers=>{},
+
+  :use_https=>false,
+
+  :http_proxy=>nil,
+
+  :https_proxy=>nil,
+
+  :api_key=>nil,
+
+  :cache=>nil,
+
+  :cache_prefix=>"geocoder:",
+
+  :units=>:km,
+
+  :distances=>:linear
+
 )

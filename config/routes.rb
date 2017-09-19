@@ -9,21 +9,25 @@ Rails.application.routes.draw do
 	  resources :individuals do
 	    post 'datatables_index', on: :collection
   		get 'export', on: :collection
+      get 'import_now', on: :collection
 	  end
 
 	  resources :clubs do
 	    post 'datatables_index', on: :collection
   		get 'export', on: :collection
+      get 'import_now', on: :collection
 	  end
 
 	  resources :individual_mf_devices do
 	    post 'datatables_index', on: :collection
   		get 'export', on: :collection
+      get 'import_now', on: :collection
 	  end
 
 	  resources :club_mf_devices do
 	    post 'datatables_index', on: :collection
   		get 'export', on: :collection
+      get 'import_now', on: :collection
 	  end
 
 

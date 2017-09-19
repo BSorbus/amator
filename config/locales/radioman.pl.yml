@@ -5,8 +5,8 @@ pl:
   pages:
     visitors:
       index:
-        title: 'Zapraszamy do rejestru on-line'
-        title_sub: 'Pozwolenia radiowe'
+        title: 'Wykaz pozwoleń służby radioamatorskiej'
+        title_sub: ' '
         sub_individuals: 'Osoby fizyczne'
         sub_individuals_text: 'Wykaz pozwoleń wydanych osobom fizycznym'
         sub_clubs: 'Podmioty prawne'
@@ -15,6 +15,8 @@ pl:
         sub_mfree_individuals_text: 'Wykaz pozwoleń wydanych osobom fizycznym'
         sub_mfree_clubs: 'Podmioty prawne - urządzenia bezobsługowe'
         sub_mfree_clubs_text: 'Wykaz pozwoleń wydanych podmiotom prawnym'
+        sub_footer_strong: 'Wykaz jest uaktualniany raz na dobę.'
+        sub_footer: 'Pozwolenie umieszczane jest w wykazie dopiero po otrzymaniu przez UKE potwierdzenia dostarczenia pozwolenia do wnioskodawcy, a więc z pewnym opóźnieniem. Brak pozwolenia i znaku wywoławczego w wykazie nie musi oznaczać, że pozwolenie nie zostało wydane.'
     users:
       index:
         title: 'Użytkownicy'
@@ -44,9 +46,9 @@ pl:
       links_www1_title: 'UKE'
       links_www1: 'http://uke.gov.pl'
       links_www2_title: 'Pozwolenia radiowe'
-      links_www2: 'http://uke.gov.pl/pozwolenia-radiowe-11784'
-      links_www3_title: 'Służba amatorska'
-      links_www3: 'http://uke.gov.pl/pozwolenie-radiowe-sluzba-amatorska-4266'
+      links_www2: 'http://uke.gov.pl//pozwolenia-amatorskie-4266'
+      links_www3_title: 'Świadectwa'
+      links_www3: 'http://uke.gov.pl/swiadectwa-amatorskie-4390'
   link_to:
     individuals: 'Osoby'
     clubs: 'Kluby'
@@ -79,7 +81,6 @@ pl:
         password_confirmation: 'Potwórz hasło'
         current_password: 'Aktualne hasło'
       individual:
-        department: 'Delegatura'
         number: 'Numer'
         date_of_issue: 'Data wydania'
         valid_to: 'Ważne do'
@@ -88,16 +89,12 @@ pl:
         transmitter_power: 'Moc'
         station_location: 'Stacja'
       club:
-        department: 'Delegatura'
         number: 'Numer'
         date_of_issue: 'Data wydania'
         valid_to: 'Ważne do'
         call_sign: 'Znak'
         category: 'Kategoria'
         transmitter_power: 'Moc'
-        operator_1: 'Operator I'
-        operator_2: 'Operator II'
-        operator_3: 'Operator III'
         enduser_name: 'Użytkownik - Nazwa'
         enduser_city: 'Użytkownik - Miejscowość'
         enduser_street: 'Użytkownik - Ulica'
@@ -115,7 +112,6 @@ pl:
         lat: 'Stacja - latitude'
         lng: 'Stacja - longitude'
       individual_mf_device:
-        department: 'Delegatura'
         number: 'Numer'
         date_of_issue: 'Data wydania'
         valid_to: 'Ważne do'
@@ -126,12 +122,8 @@ pl:
         emission: 'Emisja'
         input_frequency: 'Częstotliwość wej'
         output_frequency: 'Częstotliwość wyj'
-        operator_1: 'Operator I'
-        operator_2: 'Operator II'
-        operator_3: 'Operator III'
         station_location: 'Stacja'
       club_mf_device:
-        department: 'Delegatura'
         number: 'Numer'
         date_of_issue: 'Data wydania'
         valid_to: 'Ważne do'
@@ -142,9 +134,6 @@ pl:
         emission: 'Emisja'
         input_frequency: 'Częstotliwość wej'
         output_frequency: 'Częstotliwość wyj'
-        operator_1: 'Operator I'
-        operator_2: 'Operator II'
-        operator_3: 'Operator III'
         enduser_name: 'Użytkownik - Nazwa'
         enduser_city: 'Użytkownik - Miejscowość'
         enduser_street: 'Użytkownik - Ulica'
@@ -167,8 +156,8 @@ pl:
     company:
       show:
       form:
-        short: 'np. ARTEX'
-        name: 'np. Artex-Software Sp z o.o.'
+        short: 'np. DRONEX'
+        name: 'np. DRONEX Sp z o.o.'
       index:
   help_block_text:
     map_info: 'Uwaga! Program ustala szerokość i długość geograficzną wykorzystując Geocoder i Google Maps. Prezentacje na mapie należy traktować wylącznie jako informacje przybliżone.'

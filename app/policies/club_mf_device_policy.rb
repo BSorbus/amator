@@ -1,3 +1,4 @@
+# Policy for ClubMfDevice access
 class ClubMfDevicePolicy
   attr_reader :user, :club_mf_device
 
@@ -5,7 +6,6 @@ class ClubMfDevicePolicy
     @user = user
     @club_mf_device = club_mf_device
   end
-
 
   def index?
     true
@@ -16,7 +16,7 @@ class ClubMfDevicePolicy
   end
 
   def new?
-    user.admin? or user.power_user?
+    user.admin? || user.power_user?
   end
 
   def create?
@@ -24,7 +24,7 @@ class ClubMfDevicePolicy
   end
 
   def edit?
-    user.admin? or user.power_user?
+    user.admin? || user.power_user?
   end
 
   def update?
@@ -32,7 +32,6 @@ class ClubMfDevicePolicy
   end
 
   def destroy?
-    user.admin? or user.power_user?
+    user.admin? || user.power_user?
   end
-
 end

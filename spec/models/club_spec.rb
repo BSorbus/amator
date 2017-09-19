@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Club, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'instantiation' do
+    #let!(:club) { build(:club) }
+    let (:club) { FactoryGirl.build_stubbed :club }
+
+    it 'instantiates a list' do
+      expect(club.class.name).to eq("Club")
+    end
+  end
+
 end

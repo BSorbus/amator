@@ -1,0 +1,23 @@
+Metrics/LineLength:
+  Max: 120
+Metrics/ClassLength:
+  CountComments: false  # count full line comments?
+  Max: 100
+# If you want the rule only apply to a specific folder/file
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'log/**/*'
+    - 'tmp/**/*'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
+    - 'spec/support/**/*'
+    - 'spec/**/*'
+SpaceAroundEqualsInParameterDefault:
+  Enabled: false
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+Style/AccessorMethodName:
+  Enabled: false

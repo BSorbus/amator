@@ -1,3 +1,4 @@
+# Policy for IndividualMfDevice access
 class IndividualMfDevicePolicy
   attr_reader :user, :individual_mf_device
 
@@ -5,7 +6,6 @@ class IndividualMfDevicePolicy
     @user = user
     @individual_mf_device = individual_mf_device
   end
-
 
   def index?
     true
@@ -16,7 +16,7 @@ class IndividualMfDevicePolicy
   end
 
   def new?
-    user.admin? or user.power_user?
+    user.admin? || user.power_user?
   end
 
   def create?
@@ -24,7 +24,7 @@ class IndividualMfDevicePolicy
   end
 
   def edit?
-    user.admin? or user.power_user?
+    user.admin? || user.power_user?
   end
 
   def update?
@@ -32,7 +32,6 @@ class IndividualMfDevicePolicy
   end
 
   def destroy?
-    user.admin? or user.power_user?
+    user.admin? || user.power_user?
   end
-
 end

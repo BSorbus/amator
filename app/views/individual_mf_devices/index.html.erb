@@ -5,27 +5,23 @@
 
 <div class="col-sm-12">
   <% if I18n.locale == :pl %>
-  <table id="individual_mf_devices" class="hover cell-border" data-source="<%= datatables_index_individual_mf_devices_path(format: :json) %>">
+  <table id="individual_mf_devices" class="hover cell-border" width="100%" data-source="<%= datatables_index_individual_mf_devices_path(format: :json) %>">
   <% else %>
-  <table id="individual_mf_devices_en" class="hover cell-border" data-source="<%= datatables_index_individual_mf_devices_path(format: :json) %>">
+  <table id="individual_mf_devices_en" class="hover cell-border" width="100%" data-source="<%= datatables_index_individual_mf_devices_path(format: :json) %>">
   <% end %>
     <thead>
       <tr>
         <th> 0 id</th>
-        <th> 1 <%= IndividualMfDevice.human_attribute_name(:department) %></th>
-        <th> 2 Number</th>
-        <th> 4 Valid to</th>
-        <th> 5 Call sign</th>
-        <th> 6 Category</th>
-        <th> 7 Transmitter power</th>
-        <th> 8 Name of station type</th>
-        <th> 9 Emission</th>
-        <th>10 Input frequency</th>
-        <th>11 Output frequency</th>
-        <th>12 Operator I</th>
-        <th>13 Operator II</th>
-        <th>14 Operator III</th>
-        <th>15 Station</th>
+        <th> 1 Number</th>
+        <th> 2 Valid to</th>
+        <th> 3 Call sign</th>
+        <th> 4 Category</th>
+        <th> 5 Transmitter power</th>
+        <th> 6 Name of station type</th>
+        <th> 7 Emission</th>
+        <th> 8 Input frequency</th>
+        <th> 9 Output frequency</th>
+        <th>10 Station</th>
       </tr>
     </thead>
 

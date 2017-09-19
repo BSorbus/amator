@@ -1,9 +1,9 @@
+#
 class ClubMfDevicesController < ApplicationController
   before_action :authenticate_user!, except: [:export, :index, :datatables_index, :show]
   after_action :verify_authorized, except: [:export, :index, :datatables_index, :show]
 
   before_action :set_club_mf_device, only: [:show, :edit, :update, :destroy]
-
 
   def export
     @data = ClubMfDevice.all
@@ -19,6 +19,7 @@ class ClubMfDevicesController < ApplicationController
   def index
     respond_to do |format|
       format.html
+      format.json 
     end   
   end
 
@@ -102,6 +103,6 @@ class ClubMfDevicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def club_mf_device_params
-      params.require(:club_mf_device).permit(:department, :number, :date_of_issue, :valid_to, :call_sign, :category, :transmitter_power, :name_type_station, :emission, :input_frequency, :output_frequency, :operator_1, :operator_2, :operator_3, :enduser_name, :enduser_city, :enduser_street, :enduser_house, :enduser_number, :applicant_name, :applicant_city, :applicant_street, :applicant_house, :applicant_number, :station_city, :station_street, :station_house, :station_number)
+      params.require(:club_mf_device).permit(:number, :date_of_issue, :valid_to, :call_sign, :category, :transmitter_power, :name_type_station, :emission, :input_frequency, :output_frequency, :enduser_name, :enduser_city, :enduser_street, :enduser_house, :enduser_number, :applicant_name, :applicant_city, :applicant_street, :applicant_house, :applicant_number, :station_city, :station_street, :station_house, :station_number)
     end
 end

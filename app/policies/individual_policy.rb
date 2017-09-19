@@ -1,3 +1,4 @@
+# Policy for Individual access
 class IndividualPolicy
   attr_reader :user, :individual
 
@@ -5,7 +6,6 @@ class IndividualPolicy
     @user = user
     @individual = individual
   end
-
 
   def index?
     true
@@ -16,7 +16,7 @@ class IndividualPolicy
   end
 
   def new?
-    user.admin? or user.power_user?
+    user.admin? || user.power_user?
   end
 
   def create?
@@ -24,7 +24,7 @@ class IndividualPolicy
   end
 
   def edit?
-    user.admin? or user.power_user?
+    user.admin? || user.power_user?
   end
 
   def update?
@@ -32,7 +32,6 @@ class IndividualPolicy
   end
 
   def destroy?
-    user.admin? or user.power_user?
+    user.admin? || user.power_user?
   end
-
 end

@@ -1,8 +1,7 @@
+#
 class ClubMfDevice < ActiveRecord::Base
-
-  geocoded_by :full_station_address, :latitude => :lat, :longitude => :lng  # can also be an IP address
-  after_validation :geocode           # auto-fetch coordinates
-
+  geocoded_by :full_station_address, latitude: :lat, longitude: :lng # can also be an IP address
+  after_validation :geocode # auto-fetch coordinates
 
   def fullname
     "#{number}, #{call_sign}"
@@ -12,18 +11,27 @@ class ClubMfDevice < ActiveRecord::Base
     "#{number}, #{call_sign} (#{station_city}, #{station_street})"
   end
 
+  # for Google
   def full_station_address
-    "pl, #{station_city}, #{station_street}"
+    "PL, #{station_city}, #{station_street}"
   end
 
+  # for Yandex
+  #def full_station_address
+  #  "#{station_street}, #{station_city}, Poland"
+  #end
+
+  # rubocop:disable MethodLength
   def self.to_csv
     CSV.generate(headers: false, col_sep: ';', converters: nil, skip_blanks: false, force_quotes: false) do |csv|
-      columns_header = %w{department number valid_to call_sign category transmitter_power name_type_station emission input_frequency output_frequency operator_1 operator_2 operator_3 applicant_name applicant_city applicant_street applicant_house applicant_number enduser_name enduser_city enduser_street enduser_house enduser_number	station_city station_street station_house station_number }
+      columns_header = %w(number valid_to call_sign category transmitter_power name_type_station
+                          emission input_frequency output_frequency
+                          applicant_name applicant_city applicant_street applicant_house applicant_number
+                          enduser_name enduser_city enduser_street enduser_house enduser_number
+                          station_city station_street station_house station_number)
       csv << columns_header
       all.each do |rec|
-        csv << [
-                rec.department.strip,
-                rec.number.strip,
+        csv << [rec.number.strip,
                 rec.valid_to,
                 rec.call_sign,
                 rec.category,
@@ -32,9 +40,6 @@ class ClubMfDevice < ActiveRecord::Base
                 rec.emission,
                 rec.input_frequency,
                 rec.output_frequency,
-                rec.operator_1,
-                rec.operator_2,
-                rec.operator_3,
                 rec.applicant_name,
                 rec.applicant_city,
                 rec.applicant_street,
@@ -48,13 +53,85 @@ class ClubMfDevice < ActiveRecord::Base
                 rec.station_city,
                 rec.station_street,
                 rec.station_house,
-                rec.station_number
-            	]
+                rec.station_number]
       end
-
     end.encode('WINDOWS-1250')
   end
 
+  def self.load_from_pwid(doc)
+    ClubMfDevice.destroy_all
+    doc.xpath("//*[local-name()='wyszukajPozwoleniaBezobslugoweResponse']").each do |resp|
+      resp.xpath("./*[local-name()='return']").each do |ret|
+        ret.xpath("./*[local-name()='pozwolenie']").each do |pozwol|
 
+          if pozwol.xpath("./*[local-name()='status']").text == 'Aktualna' && pozwol.xpath("./*[local-name()='wnioskodawca']").xpath("./*[local-name()='fizyczny']").text == 'false'
+
+            applicant_city = ''
+            applicant_street = ''
+            applicant_house = ''
+            applicant_number = ''
+
+            pozwol.xpath("./*[local-name()='wnioskodawca']").xpath("./*[local-name()='adresy']").xpath("./*[local-name()='adres']").each do |applicant_address|
+              if applicant_address.xpath("./*[local-name()='rodzajAdresu']").text == 'siedziby'
+                applicant_city    = applicant_address.xpath("./*[local-name()='miejscowosc']").text
+                applicant_street  = applicant_address.xpath("./*[local-name()='ulica']").text 
+                applicant_house   = applicant_address.xpath("./*[local-name()='nrDomu']").text
+                applicant_number  = applicant_address.xpath("./*[local-name()='nrLokalu']").text
+              end 
+            end
+
+
+            enduser_city = ''
+            enduser_street = ''
+            enduser_house = ''
+            enduser_number = ''
+
+            pozwol.xpath("./*[local-name()='uzytkownik']").xpath("./*[local-name()='adresy']").xpath("./*[local-name()='adres']").each do |enduser_address|
+              if enduser_address.xpath("./*[local-name()='rodzajAdresu']").text == 'siedziby'
+                enduser_city    = enduser_address.xpath("./*[local-name()='miejscowosc']").text
+                enduser_street  = enduser_address.xpath("./*[local-name()='ulica']").text 
+                enduser_house   = enduser_address.xpath("./*[local-name()='nrDomu']").text
+                enduser_number  = enduser_address.xpath("./*[local-name()='nrLokalu']").text
+              end 
+            end
+
+            sleep 0.25
+
+            club_mf_device = ClubMfDevice.create(
+              number:             pozwol.xpath("./*[local-name()='sygnaturaEsod']").text.present? ? pozwol.xpath("./*[local-name()='sygnaturaEsod']").text : pozwol.xpath("./*[local-name()='numer']").text,
+              date_of_issue:      pozwol.xpath("./*[local-name()='waznaOd']").text,
+              valid_to:           pozwol.xpath("./*[local-name()='waznaDo']").text,
+              call_sign:          pozwol.xpath("./*[local-name()='stacja']").xpath("./*[local-name()='znak']").text,
+              category:           pozwol.xpath("./*[local-name()='wniosek']").xpath("./*[local-name()='kategoria']").text,
+              transmitter_power:  pozwol.xpath("./*[local-name()='stacja']").xpath("./*[local-name()='moc']").text,
+              name_type_station:  pozwol.xpath("./*[local-name()='stacja']").xpath("./*[local-name()='parametry']").xpath("./*[local-name()='parametr']").xpath("./*[local-name()='przeznaczenie']").map(&:text).uniq.join(", "),
+              emission:           pozwol.xpath("./*[local-name()='stacja']").xpath("./*[local-name()='parametry']").xpath("./*[local-name()='parametr']").xpath("./*[local-name()='emisja']").map(&:text).uniq.join(", "),
+              input_frequency:    pozwol.xpath("./*[local-name()='stacja']").xpath("./*[local-name()='parametry']").xpath("./*[local-name()='parametr']").xpath("./*[local-name()='czestotliwoscOdb']").map(&:text).uniq.join(", "),
+              output_frequency:   pozwol.xpath("./*[local-name()='stacja']").xpath("./*[local-name()='parametry']").xpath("./*[local-name()='parametr']").xpath("./*[local-name()='czestotliwoscNad']").map(&:text).uniq.join(", "),
+              station_city:       pozwol.xpath("./*[local-name()='stacja']").xpath("./*[local-name()='adres']").xpath("./*[local-name()='miejscowosc']").text,
+              station_street:     pozwol.xpath("./*[local-name()='stacja']").xpath("./*[local-name()='adres']").xpath("./*[local-name()='ulica']").text,
+              station_house:      pozwol.xpath("./*[local-name()='stacja']").xpath("./*[local-name()='adres']").xpath("./*[local-name()='nrDoku']").text,
+              station_number:     pozwol.xpath("./*[local-name()='stacja']").xpath("./*[local-name()='adres']").xpath("./*[local-name()='nrLokalu']").text,
+              applicant_name:     pozwol.xpath("./*[local-name()='wnioskodawca']").xpath("./*[local-name()='nazwa']").text,
+              applicant_city:     applicant_city,
+              applicant_street:   applicant_street,
+              applicant_house:    applicant_house,
+              applicant_number:   applicant_number,
+              enduser_name:       pozwol.xpath("./*[local-name()='uzytkownik']").xpath("./*[local-name()='nazwa']").text,
+              enduser_city:       enduser_city,
+              enduser_street:     enduser_street,
+              enduser_house:      enduser_house,
+              enduser_number:     enduser_number
+            )
+
+            puts 'id: '    + pozwol.xpath("./*[local-name()='id']").text + "   GEOCODER:   lat: #{club_mf_device.lat} lng: #{club_mf_device.lng}"
+          else
+            puts '******************** NIEAKTUALNE lub FIZYCZNY=true ********************'
+            puts 'id: '    + pozwol.xpath("./*[local-name()='id']").text
+            puts pozwol.xpath("./*[local-name()='sygnaturaEsod']").text.present? ? "#{pozwol.xpath("./*[local-name()='sygnaturaEsod']").text}" : "#{pozwol.xpath("./*[local-name()='numer']").text}"
+          end
+        end
+      end
+    end
+  end  
 end
-

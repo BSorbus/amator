@@ -5,8 +5,8 @@ en:
   pages: 
     visitors:
       index:
-        title: 'Welcome to the online registry'
-        title_sub: 'the Amateur Radio Authorizations'
+        title: 'Welcome to the Amateur Radio Authorization Register'
+        title_sub: ''
         sub_individuals: 'Private persons'
         sub_individuals_text: 'A list of authorizations issued for private persons'
         sub_clubs: 'Legal entity'
@@ -15,6 +15,8 @@ en:
         sub_mfree_individuals_text: 'A list of authorizations issued for private persons'
         sub_mfree_clubs: 'Club automatic stations'
         sub_mfree_clubs_text: 'A list of authorizations issued for legal entity'
+        sub_footer_strong: 'The Register is updated every day.'
+        sub_footer: 'Each authorization is placed into the Register after the Office receives the confirmation that it is delivered to the radioamateur.'
     users:
       index:
         title: 'Users'
@@ -79,7 +81,6 @@ en:
         password_confirmation: 'Password confirmation'
         current_password: 'Current password'
       individual:
-        department: 'Department'
         number: 'Number'
         date_of_issue: 'Date of issue'
         valid_to: 'Valid thru'
@@ -88,16 +89,12 @@ en:
         transmitter_power: 'Power'
         station_location: 'Station location'
       club:
-        department: 'Department'
         number: 'Number'
         date_of_issue: 'Date of issue'
         valid_to: 'Valid thru'
         call_sign: 'Call sign'
         category: 'Category'
         transmitter_power: 'Power'
-        operator_1: 'Operator I'
-        operator_2: 'Operator II'
-        operator_3: 'Operator III'
         enduser_name: 'Enduser - Name'
         enduser_city: 'Enduser - City'
         enduser_street: 'Enduser - Street'
@@ -115,7 +112,6 @@ en:
         lat: 'Station - latitude'
         lng: 'Station - longitude'
       individual_mf_device:
-        department: 'Department'
         number: 'Number'
         date_of_issue: 'Date of issue'
         valid_to: 'Valid thru'
@@ -126,12 +122,8 @@ en:
         emission: 'Emission'
         input_frequency: 'Input frequency'
         output_frequency: 'Output frequency'
-        operator_1: 'Operator I'
-        operator_2: 'Operator II'
-        operator_3: 'Operator III'
         station_location: 'Station location'
       club_mf_device:
-        department: 'Department'
         number: 'Number'
         date_of_issue: 'Date of issue'
         valid_to: 'Valid thru'
@@ -142,9 +134,6 @@ en:
         emission: 'Emission'
         input_frequency: 'Input frequency'
         output_frequency: 'Output frequency'
-        operator_1: 'Operator I'
-        operator_2: 'Operator II'
-        operator_3: 'Operator III'
         enduser_name: 'Enduser - Name'
         enduser_city: 'Enduser - City'
         enduser_street: 'Enduser - Street'
@@ -167,8 +156,8 @@ en:
     company:
       show:
       form:
-        short: 'eg.: ARTEX'
-        name: 'eg.: Artex-Software Sp z o.o.'
+        short: 'eg.: DRONEX'
+        name: 'eg.: DRONEX Sp z o.o.'
       index:
   help_block_text:
     map_info: 'Caution! The program establishes the latitude and longitude using Geocoder and Google Maps. Presentations on the map should be regarded solely as information approximate.'

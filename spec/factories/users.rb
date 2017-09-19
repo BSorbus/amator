@@ -8,6 +8,10 @@ FactoryGirl.define do
       role 'admin'
     end
 
+    trait :power_user do
+      role 'power_user'
+    end
+
     # add if Devise confirmable
     #after(:build) do |u|
     #  u.confirm!
@@ -15,8 +19,6 @@ FactoryGirl.define do
     #end
     # or
     before(:create) {|user| user.skip_confirmation! }
-
-
   end
 
 

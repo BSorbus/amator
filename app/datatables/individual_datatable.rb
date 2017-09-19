@@ -1,3 +1,4 @@
+#
 class IndividualDatatable < AjaxDatatablesRails::Base
   # uncomment the appropriate paginator module,
   # depending on gems available in your project.
@@ -10,45 +11,36 @@ class IndividualDatatable < AjaxDatatablesRails::Base
   def sortable_columns
     # list columns inside the Array in string dot notation.
     # Example: 'users.email'
-    @sortable_columns ||= %w( 
-                              Individual.department 
-                              Individual.number 
-                              Individual.valid_to 
-                              Individual.call_sign 
-                              Individual.category 
-                              Individual.transmitter_power 
-                              Individual.station_location 
-                          )
+    @sortable_columns ||= %w(Individual.number
+                             Individual.valid_to
+                             Individual.call_sign
+                             Individual.category
+                             Individual.transmitter_power
+                             Individual.station_location)
   end
 
   def searchable_columns
     # list columns inside the Array in string dot notation.
     # Example: 'users.email'
-    @searchable_columns ||= %w(
-                              Individual.department 
-                              Individual.number 
-                              Individual.valid_to 
-                              Individual.call_sign 
-                              Individual.category 
-                              Individual.transmitter_power 
-                              Individual.station_location 
-                            )
+    @searchable_columns ||= %w(Individual.number
+                               Individual.valid_to
+                               Individual.call_sign
+                               Individual.category
+                               Individual.transmitter_power
+                               Individual.station_location)
   end
 
   private
 
   def data
     records.map do |record|
-      [
-        record.id,
-        record.department, 
-        record.number,
-        record.valid_to,
-        record.call_sign,
-        record.category,
-        record.transmitter_power,
-        record.station_location        
-      ]
+      [record.id,
+       record.number,
+       record.valid_to,
+       record.call_sign,
+       record.category,
+       record.transmitter_power,
+       record.station_location]
     end
   end
 

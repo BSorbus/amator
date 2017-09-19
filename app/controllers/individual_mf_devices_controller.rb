@@ -1,15 +1,15 @@
+#
 class IndividualMfDevicesController < ApplicationController
   before_action :authenticate_user!, except: [:export, :index, :datatables_index, :show]
   after_action :verify_authorized, except: [:export, :index, :datatables_index, :show]
 
   before_action :set_individual_mf_device, only: [:show, :edit, :update, :destroy]
 
-
   def export
     @data = IndividualMfDevice.all
   
     respond_to do |format|
-      format.csv { send_data @data.to_csv, filename: "individual_mf_devices_#{Time.zone.today.strftime("%Y-%m-%d")}.csv" }
+      format.csv { send_data @data.to_csv, filename: "individual_mf_devices_#{Time.zone.today.strftime('%Y-%m-%d')}.csv" }
       #format.csv { send_data @individuals.to_csv, filename: "ra_individuals_#{Time.zone.new().strftime("%Y-%m-%d")}.csv" }
     end
   end
@@ -19,6 +19,7 @@ class IndividualMfDevicesController < ApplicationController
   def index
     respond_to do |format|
       format.html
+      format.json
     end   
   end
 
@@ -26,13 +27,14 @@ class IndividualMfDevicesController < ApplicationController
   def datatables_index
     #data_scope = current_user.admin? ? -1 : current_user.id
     respond_to do |format|
-      format.json{ render json: IndividualMfDeviceDatatable.new(view_context) }
+      format.json { render json: IndividualMfDeviceDatatable.new(view_context) }
     end
   end
 
   # GET /individual_mf_devices/1
   # GET /individual_mf_devices/1.json
   def show
+    # show
   end
 
   # GET /individual_mf_devices/new
@@ -66,7 +68,7 @@ class IndividualMfDevicesController < ApplicationController
   # PATCH/PUT /individual_mf_devices/1
   # PATCH/PUT /individual_mf_devices/1.json
   def update
-    authorize @individual
+    authorize @individual_mf_device
 
     respond_to do |format|
       if @individual_mf_device.update(individual_mf_device_params)
@@ -103,6 +105,6 @@ class IndividualMfDevicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def individual_mf_device_params
-      params.require(:individual_mf_device).permit(:department, :number, :date_of_issue, :valid_to, :call_sign, :category, :transmitter_power, :name_type_station, :emission, :input_frequency, :output_frequency, :operator_1, :operator_2, :operator_3, :station_location)
+      params.require(:individual_mf_device).permit(:number, :date_of_issue, :valid_to, :call_sign, :category, :transmitter_power, :name_type_station, :emission, :input_frequency, :output_frequency, :station_location)
     end
 end

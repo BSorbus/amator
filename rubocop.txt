@@ -1,0 +1,302 @@
+Inspecting 35 files
+.C........C.CCC...CCCCCCCCCCWCCCWCC
+
+Offenses:
+
+Gemfile:4:1: C: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem coffee-rails should appear before rails.
+gem 'coffee-rails', '~> 4.1.0'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:7:1: C: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem jquery-rails should appear before uglifier.
+gem 'jquery-rails'
+^^^^^^^^^^^^^^^^^^
+Gemfile:11:1: C: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem jbuilder should appear before turbolinks.
+gem 'jbuilder', '~> 2.0'
+^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:52:1: C: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem ckan should appear before gmaps4rails.
+gem 'ckan', github: 'fishpercolator/CKAN'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/club.rb:19:3: C: Assignment Branch Condition size for to_csv is too high. [31.02/15]
+  def self.to_csv
+  ^^^
+app/models/club.rb:20:5: C: Block has too many lines. [30/25]
+    CSV.generate(headers: false, col_sep: ';', converters: nil, skip_blanks: false, force_quotes: false) do |csv| ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/club_mf_device.rb:19:3: C: Assignment Branch Condition size for to_csv is too high. [35.01/15]
+  def self.to_csv
+  ^^^
+app/models/club_mf_device.rb:20:5: C: Block has too many lines. [35/25]
+    CSV.generate(headers: false, col_sep: ';', converters: nil, skip_blanks: false, force_quotes: false) do |csv| ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/club_mf_device.rb:27:7: C: Block has too many lines. [27/25]
+      all.each do |rec| ...
+      ^^^^^^^^^^^^^^^^^
+app/models/individual.rb:8:3: C: Assignment Branch Condition size for to_csv is too high. [15.03/15]
+  def self.to_csv
+  ^^^
+app/models/individual_mf_device.rb:8:3: C: Assignment Branch Condition size for to_csv is too high. [22.02/15]
+  def self.to_csv
+  ^^^
+app/datatables/club_mf_device_datatable.rb:54:3: C: Assignment Branch Condition size for data is too high. [18/15]
+  def data
+  ^^^
+app/datatables/individual_mf_device_datatable.rb:52:3: C: Assignment Branch Condition size for data is too high. [17/15]
+  def data
+  ^^^
+app/views/individual_mf_devices/show.json.jbuilder:2:1: C: Align the parameters of a method call if they span more than one line.
+:transmitter_power, :name_type_station, :emission, :input_frequency, :output_frequency, :operator_1, :operator_2, :operator_3, :station_location, :created_at, :updated_at
+^^^^^^^^^^^^^^^^^^
+app/views/individual_mf_devices/show.json.jbuilder:2:121: C: Line is too long. [170/120]
+:transmitter_power, :name_type_station, :emission, :input_frequency, :output_frequency, :operator_1, :operator_2, :operator_3, :station_location, :created_at, :updated_at
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/individual_mf_devices/index.json.jbuilder:2:121: C: Line is too long. [259/120]
+  json.extract! individual_mf_device, :id, :department, :number, :date_of_issue, :valid_to, :call_sign, :category, :transmitter_power, :name_type_station, :emission, :input_frequency, :output_frequency, :operator_1, :operator_2, :operator_3, :station_location
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/club_mf_devices/show.json.jbuilder:1:121: C: Line is too long. [494/120]
+json.extract! @club_mf_device, :id, :department, :number, :date_of_issue, :valid_to, :call_sign, :category, :transmitter_power, :name_type_station, :emission, :input_frequency, :output_frequency, :operator_1, :operator_2, :operator_3, :enduser_name, :enduser_city, :enduser_street, :enduser_house, :enduser_number, :applicant_name, :applicant_city, :applicant_street, :applicant_house, :applicant_number, :station_city, :station_street, :station_house, :station_number, :created_at, :updated_at
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/club_mf_devices/index.json.jbuilder:2:121: C: Line is too long. [469/120]
+  json.extract! club_mf_device, :id, :department, :number, :date_of_issue, :valid_to, :call_sign, :category, :transmitter_power, :name_type_station, :emission, :input_frequency, :output_frequency, :operator_1, :operator_2, :operator_3, :enduser_name, :enduser_city, :enduser_street, :enduser_house, :enduser_number, :applicant_name, :applicant_city, :applicant_street, :applicant_house, :applicant_number, :station_city, :station_street, :station_house, :station_number
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/individuals/show.json.jbuilder:1:121: C: Line is too long. [167/120]
+json.extract! @individual, :id, :department, :number, :date_of_issue, :valid_to, :call_sign, :category, :transmitter_power, :station_location, :created_at, :updated_at
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/individuals/index.json.jbuilder:2:121: C: Line is too long. [142/120]
+  json.extract! individual, :id, :department, :number, :date_of_issue, :valid_to, :call_sign, :category, :transmitter_power, :station_location
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^
+app/views/clubs/show.json.jbuilder:1:121: C: Line is too long. [428/120]
+json.extract! @club, :id, :department, :number, :date_of_issue, :valid_to, :call_sign, :category, :transmitter_power, :operator_1, :operator_2, :operator_3, :enduser_name, :enduser_city, :enduser_street, :enduser_house, :enduser_number, :applicant_name, :applicant_city, :applicant_street, :applicant_house, :applicant_number, :station_city, :station_street, :station_house, :station_number, :lat, :lng, :created_at, :updated_at
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/views/clubs/index.json.jbuilder:2:121: C: Line is too long. [403/120]
+  json.extract! club, :id, :department, :number, :date_of_issue, :valid_to, :call_sign, :category, :transmitter_power, :operator_1, :operator_2, :operator_3, :enduser_name, :enduser_city, :enduser_street, :enduser_house, :enduser_number, :applicant_name, :applicant_city, :applicant_street, :applicant_house, :applicant_number, :station_city, :station_street, :station_house, :station_number, :lat, :lng
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:16:27: W: Unused method argument - options. If it's necessary, use _ or _options as an argument name to indicate that it won't be used. You can also write as default_url_options(*) if you want the method to accept any arguments but don't care about them.
+  def default_url_options(options = {})
+                          ^^^^^^^
+app/controllers/application_controller.rb:21:5: C: Use a guard clause instead of wrapping the code inside a conditional expression.
+    unless request_from_the_security_area?
+    ^^^^^^
+app/controllers/application_controller.rb:22:25: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      flash[:error] = t "restricted_area"
+                        ^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:25:6: C: Trailing whitespace detected.
+  end 
+     ^
+app/controllers/application_controller.rb:31:1: C: Incorrect indentation detected (column 0 instead of 2).
+#  end
+^^^^^^
+app/controllers/application_controller.rb:33:3: C: Assignment Branch Condition size for request_from_the_security_area? is too high. [24.25/15]
+  def request_from_the_security_area?
+  ^^^
+app/controllers/application_controller.rb:33:3: C: Method has too many lines. [14/10]
+  def request_from_the_security_area? ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:34:5: C: Missing space after #.
+    #@ips = ['127.0.0.1', '192.168.1.0/24'] #And so on ...]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:35:43: C: Missing space after #.
+    @ips = ['127.0.0.1', '172.16.1.0/24'] #And so on ...]
+                                          ^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:52:5: C: Redundant return detected.
+    return allowed
+    ^^^^^^
+app/controllers/application_controller.rb:55:1: C: Extra blank line detected.
+app/controllers/application_controller.rb:56:1: C: Extra blank line detected.
+app/controllers/application_controller.rb:56:1: C: Extra empty line detected at class body end.
+app/controllers/individual_mf_devices_controller.rb:10:1: C: Trailing whitespace detected.
+app/controllers/individual_mf_devices_controller.rb:12:121: C: Line is too long. [122/120]
+      format.csv { send_data @data.to_csv, filename: "individual_mf_devices_#{Time.zone.today.strftime('%Y-%m-%d')}.csv" }
+                                                                                                                        ^^
+app/controllers/individual_mf_devices_controller.rb:13:7: C: Missing space after #.
+      #format.csv { send_data @individuals.to_csv, filename: "ra_individuals_#{Time.zone.new().strftime("%Y-%m-%d")}.csv" }
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/individual_mf_devices_controller.rb:13:121: C: Line is too long. [123/120]
+      #format.csv { send_data @individuals.to_csv, filename: "ra_individuals_#{Time.zone.new().strftime("%Y-%m-%d")}.csv" }
+                                                                                                                        ^^^
+app/controllers/individual_mf_devices_controller.rb:23:8: C: Trailing whitespace detected.
+    end   
+       ^^^
+app/controllers/individual_mf_devices_controller.rb:28:5: C: Missing space after #.
+    #data_scope = current_user.admin? ? -1 : current_user.id
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/individual_mf_devices_controller.rb:53:3: C: Assignment Branch Condition size for create is too high. [16.06/15]
+  def create
+  ^^^
+app/controllers/individual_mf_devices_controller.rb:53:3: C: Method has too many lines. [11/10]
+  def create ...
+  ^^^^^^^^^^
+app/controllers/individual_mf_devices_controller.rb:59:121: C: Line is too long. [151/120]
+        format.html { redirect_to @individual_mf_device, notice: t('activerecord.messages.successfull.created', data: @individual_mf_device.fullname) }
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/individual_mf_devices_controller.rb:70:3: C: Assignment Branch Condition size for update is too high. [15.03/15]
+  def update
+  ^^^
+app/controllers/individual_mf_devices_controller.rb:75:121: C: Line is too long. [151/120]
+        format.html { redirect_to @individual_mf_device, notice: t('activerecord.messages.successfull.updated', data: @individual_mf_device.fullname) }
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/individual_mf_devices_controller.rb:88:1: C: Trailing whitespace detected.
+app/controllers/individual_mf_devices_controller.rb:90:121: C: Line is too long. [140/120]
+      redirect_to individuals_mf_device_url, notice: t('activerecord.messages.successfull.destroyed', data: @individual_mf_device.fullname) 
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^
+app/controllers/individual_mf_devices_controller.rb:90:140: C: Trailing whitespace detected.
+      redirect_to individuals_mf_device_url, notice: t('activerecord.messages.successfull.destroyed', data: @individual_mf_device.fullname) 
+                                                                                                                                           ^
+app/controllers/individual_mf_devices_controller.rb:91:9: C: Trailing whitespace detected.
+    else 
+        ^
+app/controllers/individual_mf_devices_controller.rb:94:8: C: Trailing whitespace detected.
+    end      
+       ^^^^^^
+app/controllers/individual_mf_devices_controller.rb:97:1: C: Extra blank line detected.
+app/controllers/individual_mf_devices_controller.rb:98:1: C: Extra blank line detected.
+app/controllers/individual_mf_devices_controller.rb:99:1: C: Extra blank line detected.
+app/controllers/individual_mf_devices_controller.rb:100:3: C: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/controllers/individual_mf_devices_controller.rb:102:5: C: Inconsistent indentation detected.
+    def set_individual_mf_device ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/individual_mf_devices_controller.rb:107:5: C: Inconsistent indentation detected.
+    def individual_mf_device_params ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/individual_mf_devices_controller.rb:108:121: C: Line is too long. [268/120]
+      params.require(:individual_mf_device).permit(:department, :number, :date_of_issue, :valid_to, :call_sign, :category, :transmitter_power, :name_type_station, :emission, :input_frequency, :output_frequency, :operator_1, :operator_2, :operator_3, :station_location)
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:20:31: C: Use the new Ruby 1.9 hash syntax.
+      redirect_to users_path, :notice => "User updated."
+                              ^^^^^^^^^^
+app/controllers/users_controller.rb:20:42: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      redirect_to users_path, :notice => "User updated."
+                                         ^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:22:31: C: Use the new Ruby 1.9 hash syntax.
+      redirect_to users_path, :alert => "Unable to update user."
+                              ^^^^^^^^^
+app/controllers/users_controller.rb:22:41: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      redirect_to users_path, :alert => "Unable to update user."
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:30:29: C: Use the new Ruby 1.9 hash syntax.
+    redirect_to users_path, :notice => "User deleted."
+                            ^^^^^^^^^^
+app/controllers/users_controller.rb:30:40: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    redirect_to users_path, :notice => "User deleted."
+                                       ^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:38:1: C: Extra empty line detected at class body end.
+app/controllers/club_mf_devices_controller.rb:10:1: C: Trailing whitespace detected.
+app/controllers/club_mf_devices_controller.rb:12:98: C: Prefer single-quoted strings inside interpolations.
+      format.csv { send_data @data.to_csv, filename: "club_mf_devices_#{Time.zone.today.strftime("%Y-%m-%d")}.csv" }
+                                                                                                 ^^^^^^^^^^
+app/controllers/club_mf_devices_controller.rb:13:7: C: Missing space after #.
+      #format.csv { send_data @individuals.to_csv, filename: "ra_individuals_#{Time.zone.new().strftime("%Y-%m-%d")}.csv" }
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/club_mf_devices_controller.rb:13:121: C: Line is too long. [123/120]
+      #format.csv { send_data @individuals.to_csv, filename: "ra_individuals_#{Time.zone.new().strftime("%Y-%m-%d")}.csv" }
+                                                                                                                        ^^^
+app/controllers/club_mf_devices_controller.rb:22:18: C: Trailing whitespace detected.
+      format.json 
+                 ^
+app/controllers/club_mf_devices_controller.rb:23:8: C: Trailing whitespace detected.
+    end   
+       ^^^
+app/controllers/club_mf_devices_controller.rb:28:5: C: Missing space after #.
+    #data_scope = current_user.admin? ? -1 : current_user.id
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/club_mf_devices_controller.rb:30:18: C: Space missing to the left of {.
+      format.json{ render json: ClubMfDeviceDatatable.new(view_context) }
+                 ^
+app/controllers/club_mf_devices_controller.rb:33:1: C: Trailing whitespace detected.
+app/controllers/club_mf_devices_controller.rb:53:3: C: Assignment Branch Condition size for create is too high. [16.06/15]
+  def create
+  ^^^
+app/controllers/club_mf_devices_controller.rb:53:3: C: Method has too many lines. [11/10]
+  def create ...
+  ^^^^^^^^^^
+app/controllers/club_mf_devices_controller.rb:59:121: C: Line is too long. [139/120]
+        format.html { redirect_to @club_mf_device, notice: t('activerecord.messages.successfull.created', data: @club_mf_device.fullname) }
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^
+app/controllers/club_mf_devices_controller.rb:70:3: C: Assignment Branch Condition size for update is too high. [15.03/15]
+  def update
+  ^^^
+app/controllers/club_mf_devices_controller.rb:75:121: C: Line is too long. [139/120]
+        format.html { redirect_to @club_mf_device, notice: t('activerecord.messages.successfull.updated', data: @club_mf_device.fullname) }
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^
+app/controllers/club_mf_devices_controller.rb:89:1: C: Extra blank line detected.
+app/controllers/club_mf_devices_controller.rb:91:121: C: Line is too long. [128/120]
+      redirect_to club_mf_devices_url, notice: t('activerecord.messages.successfull.destroyed', data: @club_mf_device.fullname) 
+                                                                                                                        ^^^^^^^^
+app/controllers/club_mf_devices_controller.rb:91:128: C: Trailing whitespace detected.
+      redirect_to club_mf_devices_url, notice: t('activerecord.messages.successfull.destroyed', data: @club_mf_device.fullname) 
+                                                                                                                               ^
+app/controllers/club_mf_devices_controller.rb:92:9: C: Trailing whitespace detected.
+    else 
+        ^
+app/controllers/club_mf_devices_controller.rb:95:8: C: Trailing whitespace detected.
+    end      
+       ^^^^^^
+app/controllers/club_mf_devices_controller.rb:98:3: C: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/controllers/club_mf_devices_controller.rb:100:5: C: Inconsistent indentation detected.
+    def set_club_mf_device ...
+    ^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/club_mf_devices_controller.rb:105:5: C: Inconsistent indentation detected.
+    def club_mf_device_params ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/club_mf_devices_controller.rb:106:121: C: Line is too long. [478/120]
+      params.require(:club_mf_device).permit(:department, :number, :date_of_issue, :valid_to, :call_sign, :category, :transmitter_power, :name_type_station, :emission, :input_frequency, :output_frequency, :operator_1, :operator_2, :operator_3, :enduser_name, :enduser_city, :enduser_street, :enduser_house, :enduser_number, :applicant_name, :applicant_city, :applicant_street, :applicant_house, :applicant_number, :station_city, :station_street, :station_house, :station_number)
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/individuals_controller.rb:10:7: C: Inconsistent indentation detected.
+      respond_to do |format| ...
+      ^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/individuals_controller.rb:11:94: C: Prefer single-quoted strings inside interpolations.
+      format.csv { send_data @data.to_csv, filename: "individuals_#{Time.zone.today.strftime("%Y-%m-%d")}.csv" }
+                                                                                             ^^^^^^^^^^
+app/controllers/individuals_controller.rb:12:5: W: end at 12, 4 is not aligned with respond_to do |format| at 10, 6.
+    end
+    ^^^
+app/controllers/individuals_controller.rb:21:8: C: Trailing whitespace detected.
+    end   
+       ^^^
+app/controllers/individuals_controller.rb:26:5: C: Missing space after #.
+    #data_scope = current_user.admin? ? -1 : current_user.id
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/individuals_controller.rb:51:3: C: Assignment Branch Condition size for create is too high. [16.06/15]
+  def create
+  ^^^
+app/controllers/individuals_controller.rb:51:3: C: Method has too many lines. [11/10]
+  def create ...
+  ^^^^^^^^^^
+app/controllers/individuals_controller.rb:57:121: C: Line is too long. [131/120]
+        format.html { redirect_to @individual, notice: t('activerecord.messages.successfull.created', data: @individual.fullname) }
+                                                                                                                        ^^^^^^^^^^^
+app/controllers/individuals_controller.rb:68:3: C: Assignment Branch Condition size for update is too high. [15.03/15]
+  def update
+  ^^^
+app/controllers/individuals_controller.rb:73:121: C: Line is too long. [131/120]
+        format.html { redirect_to @individual, notice: t('activerecord.messages.successfull.updated', data: @individual.fullname) }
+                                                                                                                        ^^^^^^^^^^^
+app/controllers/individuals_controller.rb:97:5: C: Inconsistent indentation detected.
+    def set_individual ...
+    ^^^^^^^^^^^^^^^^^^
+app/controllers/individuals_controller.rb:102:5: C: Inconsistent indentation detected.
+    def individual_params ...
+    ^^^^^^^^^^^^^^^^^^^^^
+app/controllers/individuals_controller.rb:103:121: C: Line is too long. [151/120]
+      params.require(:individual).permit(:department, :number, :date_of_issue, :valid_to, :call_sign, :category, :transmitter_power, :station_location)
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/visitors_controller.rb:3:1: C: Extra empty line detected at class body beginning.
+app/controllers/clubs_controller.rb:54:3: C: Assignment Branch Condition size for create is too high. [16.06/15]
+  def create
+  ^^^
+app/controllers/clubs_controller.rb:70:3: C: Assignment Branch Condition size for update is too high. [15.03/15]
+  def update
+  ^^^
+app/controllers/clubs_controller.rb:98:5: C: Inconsistent indentation detected.
+    def set_club ...
+    ^^^^^^^^^^^^
+app/controllers/clubs_controller.rb:103:5: C: Inconsistent indentation detected.
+    def club_params ...
+    ^^^^^^^^^^^^^^^
+app/controllers/clubs_controller.rb:104:121: C: Line is too long. [412/120]
+      params.require(:club).permit(:department, :number, :date_of_issue, :valid_to, :call_sign, :category, :transmitter_power, :operator_1, :operator_2, :operator_3, :enduser_name, :enduser_city, :enduser_street, :enduser_house, :enduser_number, :applicant_name, :applicant_city, :applicant_street, :applicant_house, :applicant_number, :station_city, :station_street, :station_house, :station_number, :lat, :lng)
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+35 files inspected, 107 offenses detected

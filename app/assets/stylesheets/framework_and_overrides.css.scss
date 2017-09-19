@@ -10,6 +10,11 @@ $font-size-base: 14px;
   max-width: none;
 }
 
+/* Bootstrap Css Map Fix*/
+#map label {
+  width: auto; display:inline;
+}
+
 //blokuje wyswietlanie icon "trojkat"
 //table.dataTable thead .sorting_asc { background: none }
 //table.dataTable thead .sorting_desc { background: none }
@@ -53,6 +58,13 @@ hr {
   margin-bottom: 15px;
 }
 
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -64px;
+  margin-left: -64px;  
+}
 
 .panel-individual {
   border-color: #ddd  

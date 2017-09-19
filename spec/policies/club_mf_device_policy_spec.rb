@@ -1,28 +1,71 @@
 require 'rails_helper'
 
-describe ClubMfDevicePolicy do
-
-  let(:user) { User.new }
-
+RSpec.describe ClubMfDevicePolicy do
   subject { described_class }
 
-  permissions ".scope" do
-    pending "add some examples to (or delete) #{__FILE__}"
+  let(:user) { FactoryGirl.build_stubbed :user }
+  let(:admin) { FactoryGirl.build_stubbed :user, :admin }
+  let(:power_user) { FactoryGirl.build_stubbed :user, :power_user }
+
+  let(:club_mf_device) { FactoryGirl.build_stubbed :club_mf_device }
+
+  permissions :index? do
+    it 'allows an admin to index' do
+      expect(subject).to permit(user, club_mf_device)
+    end
+    it 'allows an admin to index' do
+      expect(subject).to permit(admin, club_mf_device)
+    end
+    it 'allows an power_user to index' do
+      expect(subject).to permit(power_user, club_mf_device)
+    end
   end
 
   permissions :show? do
-    pending "add some examples to (or delete) #{__FILE__}"
+    it 'allows an admin to show' do
+      expect(subject).to permit(user, club_mf_device)
+    end
+    it 'allows an admin to show' do
+      expect(subject).to permit(admin, club_mf_device)
+    end
+    it 'allows an power_user to show' do
+      expect(subject).to permit(power_user, club_mf_device)
+    end
   end
 
   permissions :create? do
-    pending "add some examples to (or delete) #{__FILE__}"
+    it 'prevents created if not an admin or power_user' do
+      expect(subject).not_to permit(user, club_mf_device)
+    end
+    it 'allows an admin to create' do
+      expect(subject).to permit(admin, club_mf_device)
+    end
+    it 'allows an power_user to create' do
+      expect(subject).to permit(power_user, club_mf_device)
+    end
   end
 
   permissions :update? do
-    pending "add some examples to (or delete) #{__FILE__}"
+    it 'prevents updates if not an admin or power_user' do
+      expect(subject).not_to permit(user, club_mf_device)
+    end
+    it 'allows an admin to make updates' do
+      expect(subject).to permit(admin, club_mf_device)
+    end
+    it 'allows an power_user to make updates' do
+      expect(subject).to permit(power_user, club_mf_device)
+    end
   end
 
   permissions :destroy? do
-    pending "add some examples to (or delete) #{__FILE__}"
+    it 'prevents destroyed if not an admin or power_user' do
+      expect(subject).not_to permit(user, club_mf_device)
+    end
+    it 'allows an admin to destroy' do
+      expect(subject).to permit(admin, club_mf_device)
+    end
+    it 'allows an power_user to destroy' do
+      expect(subject).to permit(power_user, club_mf_device)
+    end
   end
 end

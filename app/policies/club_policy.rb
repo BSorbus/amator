@@ -1,3 +1,4 @@
+# Policy for Club access
 class ClubPolicy
   attr_reader :user, :club
 
@@ -5,7 +6,6 @@ class ClubPolicy
     @user = user
     @club = club
   end
-
 
   def index?
     true
@@ -16,7 +16,7 @@ class ClubPolicy
   end
 
   def new?
-    user.admin? or user.power_user?
+    user.admin? || user.power_user?
   end
 
   def create?
@@ -24,7 +24,7 @@ class ClubPolicy
   end
 
   def edit?
-    user.admin? or user.power_user?
+    user.admin? || user.power_user?
   end
 
   def update?
@@ -32,7 +32,6 @@ class ClubPolicy
   end
 
   def destroy?
-    user.admin? or user.power_user?
+    user.admin? || user.power_user?
   end
-
 end
